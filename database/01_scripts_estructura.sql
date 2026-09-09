@@ -1,5 +1,5 @@
 
--- ALUMNO: ROLANDO VELASCO
+-- ALUMNOS: ROLANDO VELASCO, MARIO MELÉNDEZ, ULISES MERCADO
 
 -- CREAR BASE DE DATOS
 
@@ -10,7 +10,7 @@
 
   CREATE TABLE IF NOT EXISTS public.instituciones(
     id_institucion INTEGER UNIQUE GENERATED ALWAYS AS IDENTITY,
-	nombre  CHARACTER(125) NOT NULL,
+	nombre  VARCHAR(125) NOT NULL,
 	creada DATE NOT NULL DEFAULT (CURRENT_DATE),
 	
 	CONSTRAINT instituciones_pkey PRIMARY KEY(id_institucion)
@@ -19,14 +19,15 @@
 
 
 -- CREAR TABLA usuarios
+
   CREATE TABLE IF NOT EXISTS public.usuarios(
     id_usuario INTEGER UNIQUE GENERATED ALWAYS AS IDENTITY,
 	id_institucion INTEGER NOT NULL,
-	nombre CHARACTER(100) NOT NULL,
-	correo CHARACTER(125) UNIQUE NOT NULL,
+	nombre VARCHAR(100) NOT NULL,
+	correo VARCHAR(125) UNIQUE NOT NULL,
 	contrasena VARCHAR(255) NOT NULL,
     telefono VARCHAR(20),
-	rol CHARACTER(50) NOT NULL DEFAULT 'docente',
+	rol VARCHAR(50) NOT NULL DEFAULT 'docente',
 	creado DATE NOT NULL DEFAULT(CURRENT_DATE),
 
 	CONSTRAINT usuarios_pkey PRIMARY KEY(id_usuario),
@@ -39,7 +40,7 @@
   CREATE TABLE IF NOT EXISTS public.ubicaciones(
     id_ubicacion INTEGER UNIQUE GENERATED ALWAYS AS IDENTITY,
 	id_institucion INTEGER NOT NULL,
-	nombre CHARACTER(180) NOT NULL,
+	nombre VARCHAR(180) NOT NULL,
 	creada DATE NOT NULL DEFAULT (CURRENT_DATE),
 
 	CONSTRAINT ubicaciones_pkey PRIMARY KEY(id_ubicacion),
@@ -51,7 +52,7 @@
 
   CREATE TABLE IF NOT EXISTS public.tipos_emergencia(
     id_tipo INTEGER UNIQUE GENERATED ALWAYS AS IDENTITY,
-	tipo  CHARACTER(100) NOT NULL,
+	tipo  VARCHAR(100) NOT NULL,
 	creada DATE NOT NULL DEFAULT (CURRENT_DATE),
 	
 	CONSTRAINT tipos_emergencia_pkey PRIMARY KEY(id_tipo)
@@ -64,9 +65,9 @@
 	id_usuario INTEGER,
 	id_tipo INTEGER NOT NULL,
 	id_ubicacion INTEGER NOT NULL,
-	comando_recibido CHARACTER(50) NOT NULL,
-    descripcion CHARACTER(150) NOT NULL,
-    estado CHARACTER(50) NOT NULL DEFAULT 'SEGURO',
+	comando_recibido VARCHAR(50) NOT NULL,
+    descripcion VARCHAR(150) NOT NULL,
+    estado VARCHAR(50) NOT NULL DEFAULT 'SEGURO',
 	hora_emerg TIME NOT NULL DEFAULT (CURRENT_TIME),
 	fecha DATE NOT NULL DEFAULT (CURRENT_DATE),
 
@@ -83,6 +84,34 @@
 	FOREIGN KEY(id_ubicacion) REFERENCES ubicaciones(id_ubicacion)
 	
   )
+
+-- CREAR TABLA historial
+
+  CREATE TABLE IF NOT EXISTS public.historial
+   (
+    id_historial INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+    id_usuario INTEGER NOT NULL,
+	id_alerta INTEGER NOT NULL,
+	id_tipo INTEGER NOT NULL,
+	id_ubicacion INTEGER NOT NULL,
+	descripcion VARCHAR(200) NOT NULL,
+    fecha_hora TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+	CONSTRAINT historial_pkey PRIMARY KEY (id_historial),
+	
+    CONSTRAINT historial_ubicaciones_fkey FOREIGN KEY (id_ubicacion)
+	REFERENCES public.ubicaciones(id_ubicacion),
+
+	CONSTRAINT historial_usuarios_fkey FOREIGN KEY (id_usuario)
+    REFERENCES public.usuarios(id_usuario),
+
+    CONSTRAINT historial_alertas_fkey FOREIGN KEY (id_alerta)
+    REFERENCES public.alertas(id_alerta),
+
+	CONSTRAINT historial_tipos_fkey FOREIGN KEY (id_tipo)
+    REFERENCES public.tipos_emergencia (id_tipo)
+
+   )
 
 
 -- INSERTAR DATOS
@@ -225,5 +254,5 @@ SELECT
 
  DELETE FROM public.usuarios 
  WHERE nombre = 'Usuario prueba';
- 
+
   
