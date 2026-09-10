@@ -55,6 +55,7 @@ La base de datos está compuesta por las siguientes tablas:
 ## Relaciones entre las tablas
 
 La estructura de la base de datos permite relacionar la información mediante claves foráneas.
+
 ![Diagrama ERD de Base de Datos](./modelo/Diagrama_ERD_SAFESCHOOL.png)
 
 > [!NOTE]
