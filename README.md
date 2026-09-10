@@ -55,7 +55,7 @@ La base de datos está compuesta por las siguientes tablas:
 ## Relaciones entre las tablas
 
 La estructura de la base de datos permite relacionar la información mediante claves foráneas.
-![Banner repo](../modelo/Modelo_Fisico_Diagrama.png)
+![Diagrama ERD de Base de Datos](./modelo/Diagrama_ERD_SAFESCHOOL.png)
 
 > [!NOTE]
 > Diagrama Entidad-relación de la base de datos creada en el gestos de bases de datos PostgresSQL.

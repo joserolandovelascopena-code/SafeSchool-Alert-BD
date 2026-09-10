@@ -110,8 +110,29 @@
 	CONSTRAINT historial_tipos_fkey FOREIGN KEY (id_tipo)
     REFERENCES public.tipos_emergencia (id_tipo)
 
-   );
+  );
 
+-- INSERTAR DATOS
+	
+-- INSERTAR INSTITUCIÓN 
+
+	INSERT INTO public.instituciones (nombre) 
+	VALUES ('Instituto Católico Karol Wojtyla');
+
+-- INSERTAR UBICACIONES
+
+	INSERT INTO public.ubicaciones (id_institucion, nombre) VALUES 
+	(1, 'Edificio A'),
+	(1, 'Edificio B'),
+	(1, 'Edificio C');
+	
+-- INSERTAR TIPOS DE EMERGENCIA
+	INSERT INTO public.tipos_emergencia (tipo) VALUES 
+	('Incendio'),
+	('Medica'),
+	('Seguridad');
+
+	
 -- CONSULTAS DE TABLAS
 
 	SELECT * FROM public.instituciones;
@@ -121,5 +142,3 @@
 	SELECT * FROM public.alertas;
     SELECT * FROM public.historial;
 
-
-  
