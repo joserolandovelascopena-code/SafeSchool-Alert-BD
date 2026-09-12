@@ -1,5 +1,21 @@
 ![Banner repo](./evidenicias/recursos/banner_BD.png)
 
+# Tabla de contenido
+
+- [SafeSchool Alert: Base de Datos](#safeschool-alert-base-de-datos)
+- [Descripción del proyecto](#descripción-del-proyecto)
+- [Base de datos](#base-de-datos)
+  - [Nombre de la base de datos](#nombre-de-la-base-de-datos)
+  - [Sistema gestor](#sistema-gestor)
+- [Estructura de la base de datos](#estructura-de-la-base-de-datos)
+- [Relaciones entre las tablas](#relaciones-entre-las-tablas)
+- [Tecnologías utilizadas](#tecnologías-utilizadas)
+- [Estructura del repositorio](#estructura-del-repositorio)
+- [Integrantes](#integrantes)
+- [Instalación y Configuración](#instalación-y-configuración)
+  - [1. Prerrequisitos](#1-prerrequisitos)
+  - [2. Clonar el repositorio](#2-clonar-el-repositorio)
+
 # SafeSchool Alert: Base de Datos
 
 **Sistema inteligente de alertas y emergencias escolares**
@@ -55,6 +71,7 @@ La base de datos está compuesta por las siguientes tablas:
 ## Relaciones entre las tablas
 
 La estructura de la base de datos permite relacionar la información mediante claves foráneas.
+
 ![Diagrama ERD de Base de Datos](./modelo/Diagrama_ERD_SAFESCHOOL.png)
 
 > [!NOTE]
@@ -200,3 +217,5 @@ Luego, clona este repositorio en tu máquina local usando la terminal:
 ```bash
 git clone https://github.com/joserolandovelascopena-code/SafeSchool-Alert-BD.git
 ```
+
+[def]: #
