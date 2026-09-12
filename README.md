@@ -1,5 +1,13 @@
 ![Banner repo](./evidenicias/recursos/banner_BD.png)
 
+# SafeSchool Alert: Base de Datos
+
+**Sistema inteligente de alertas y emergencias escolares**
+
+Este repositorio contiene la estructura de la base de datos para el sistema **SafeSchool Alert**, incluidas las instrucciones necesarias para las consultas de datos, operaciones de manipulación, uniones de tablas y consultas SQL avanzadas diseñadas para recuperar los datos más precisos que el sistema utlizará.
+
+---
+
 # Tabla de contenido
 
 - [SafeSchool Alert: Base de Datos](#safeschool-alert-base-de-datos)
@@ -15,14 +23,6 @@
 - [Instalación y Configuración](#instalación-y-configuración)
   - [1. Prerrequisitos](#1-prerrequisitos)
   - [2. Clonar el repositorio](#2-clonar-el-repositorio)
-
-# SafeSchool Alert: Base de Datos
-
-**Sistema inteligente de alertas y emergencias escolares**
-
-Este repositorio contiene la estructura de la base de datos para el sistema **SafeSchool Alert**, incluidas las instrucciones necesarias para las consultas de datos, operaciones de manipulación, uniones de tablas y consultas SQL avanzadas diseñadas para recuperar los datos más precisos que el sistema utlizará.
-
----
 
 ## Descripción del proyecto
 
@@ -72,7 +72,7 @@ La base de datos está compuesta por las siguientes tablas:
 
 La estructura de la base de datos permite relacionar la información mediante claves foráneas.
 
-![Diagrama ERD de Base de Datos](./modelo/Diagrama_ERD_SAFESCHOOL.png)
+![Diagrama ERD de Base de Datos](./modelo/modeloFisico_ERD.png)
 
 > [!NOTE]
 > Diagrama Entidad-relación de la base de datos creada en el gestos de bases de datos PostgresSQL.
@@ -172,17 +172,21 @@ SafeSchool-Alert-BD/
 │
 ├── database/
 │   ├── 01_scripts_estructura.sql
-│   ├── 02_usuarios.sql
-│   ├── 03_alertas.sql
-│   └── 04_historial.sql
+│   ├── 02_datos_prueba_alertas.sql
+│   ├── 03_consultas_alertas.sql
+│   ├── 02_datos_prueba_usuarios.sql
+│   ├── 03_consultas_usuarios.sql
+│   ├── 02_datos_prueba_historial.sql
+│   ├── 03_consultas_historial.sql
+│   └── 04_seguridad.sql
 │
 ├── documentación/
 │
 ├── evidencias/
+│   └── Diagrama_ERD_SAFESCHOOL.png
 │
-├── README.md
-│
-└──
+└── README.md
+
 ```
 
 # Integrantes
