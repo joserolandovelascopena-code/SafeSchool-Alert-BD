@@ -29,7 +29,7 @@ ORDER BY id_ubicacion ASC;
 SELECT * FROM historial
 ORDER BY id_tipo DESC;
 
---|Consulta con INNER JOIN|--
+--|Consulta descriptiva con INNER JOIN|--
 SELECT 
 		historial.id_historial,
 		usuarios.nombre AS usuario,
