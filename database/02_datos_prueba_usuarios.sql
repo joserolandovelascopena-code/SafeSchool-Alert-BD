@@ -58,3 +58,73 @@ VALUES
 
 
 SELECT * FROM usuarios;
+
+SELECT * 
+FROM usuarios;
+
+
+SELECT nombre, correo, telefono, rol
+FROM usuarios
+WHERE rol = 'Docente';
+
+
+SELECT id_usuario, nombre, correo, rol
+FROM usuarios
+WHERE nombre ILIKE '%Diana%';
+
+
+SELECT nombre, correo, rol
+FROM usuarios
+WHERE rol IN ('Directora', 'Subdirector');
+
+
+INSERT INTO usuarios (
+    id_institucion,
+    nombre,
+    correo,
+    contrasena,
+    telefono,
+    rol,
+    creado
+)
+VALUES
+(
+    1,
+    'Cristina Castellanos',
+    'cristina.castellanos@ickw.edu.sv',
+    '123456',
+    '70000009',
+    'Subdirectora',
+    CURRENT_DATE
+),
+(
+    1,
+    'Elvin Saul Vazques',
+    'elvin.vazques@ickw.edu.sv',
+    '123456',
+    '70000010',
+    'Docente',
+    CURRENT_DATE
+),
+(
+    1,
+    'Wilfredo Mercado',
+    'wilfredo.mercado@ickw.edu.sv',
+    '123456',
+    '70000011',
+    'Docente',
+    CURRENT_DATE
+);
+
+
+
+
+
+SELECT * FROM usuarios;
+
+
+
+
+SELECT COUNT(*) AS total_docentes
+FROM usuarios
+WHERE rol = 'Docente';
