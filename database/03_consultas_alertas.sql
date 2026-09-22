@@ -1,5 +1,7 @@
 -- ALUMNO: ROLANDO VELASCO
 
+-- SEMANA 2: CONSULTAS
+
 -- 1.2. SELECT: 
 -- 1.2.1. CONSULTA 1: Mostrar todas las alertas.
 
@@ -218,4 +220,95 @@
  LEFT JOIN public.tipos_emergencia ON alertas.id_tipo = tipos_emergencia.id_tipo
  INNER JOIN public.ubicaciones ON alertas.id_ubicacion = ubicaciones.id_ubicacion
  GROUP BY (ubicaciones.nombre, tipos_emergencia.tipo);
+
+
+-- SEMANA 3: CONSULTAS
+
+-- CLASE 1 SEMANA 3: Consultas relacionadas entre tablas
+
+-- CONSULTA INNER JOIN 1: Mostrar información más completa de emergencias, mostrando usuario 
+-- que la atendio, ubicación y tipo.
+
+ SELECT 
+    alertas.id_alerta,
+    tipos_emergencia.tipo AS emergencia,
+	usuarios.nombre AS usuario_atendio,
+	alertas.descripcion AS descripcion,
+	ubicaciones.nombre AS ubicacion,
+    alertas.fecha AS dia_detectada,
+    alertas.hora_emerg AS hora,
+    alertas.estado
+ FROM public.alertas
+ LEFT JOIN  public.tipos_emergencia ON alertas.id_tipo = tipos_emergencia.id_tipo
+ INNER JOIN public.usuarios ON alertas.id_usuario = usuarios.id_usuario
+ INNER JOIN public.ubicaciones ON alertas.id_ubicacion = ubicaciones.id_ubicacion;
+
+-- CONSULTA INNER JOIN 2: Mostrar todas alas ubicaciones del Edificio A, mostrando
+-- el tipo de la emergencia, fecha y hora, de la más reciente a la más antigua.
+
+ SELECT 
+    alertas.id_alerta,
+    tipos_emergencia.tipo AS emergencia,
+	alertas.descripcion AS descripcion,
+	ubicaciones.nombre AS ubicacion,
+    alertas.fecha AS dia_detectada,
+    alertas.hora_emerg AS hora,
+    alertas.estado
+ FROM public.alertas
+ LEFT JOIN  public.tipos_emergencia ON alertas.id_tipo = tipos_emergencia.id_tipo
+ INNER JOIN public.ubicaciones ON alertas.id_ubicacion = ubicaciones.id_ubicacion
+ WHERE ubicaciones.nombre = 'Edificio A'
+ ORDER BY alertas.fecha DESC;
+
+
+ -- CLASE 2 SEMANA 3: Consultas de resumen y estadísticas
+
+ -- Consulta 1: ¿Cuantas emergencias por tipo se encuentran activas?
+
+ SELECT  
+   alertas.estado,
+   tipos_emergencia.tipo,
+   COUNT(*) AS cant_emergencias_activas
+ FROM public.alertas 
+ LEFT JOIN public.tipos_emergencia ON alertas.id_tipo = tipos_emergencia.id_tipo
+ WHERE alertas.estado = 'ACTIVA'
+ GROUP BY alertas.estado, tipos_emergencia.tipo;
+
+
+-- Consulta 2: ¿Cuántas emergencias han ocurrido en el la institución educativa según su tipo?
+  
+ SELECT 
+	i.nombre AS institucion, 
+	te.tipo, 
+	COUNT(*) AS cant_emergencias 
+ FROM public.alertas a
+ LEFT JOIN public.tipos_emergencia te ON a.id_tipo = te.id_tipo 
+ INNER JOIN public.ubicaciones u ON a.id_ubicacion = u.id_ubicacion
+ INNER JOIN public.instituciones i ON u.id_institucion = i.id_institucion 
+ WHERE i.nombre = 'Instituto Católico Karol Wojtyla' 
+ GROUP BY i.nombre, te.tipo; 
  
+-- Consulta 3: ¿Cuántas emergencias hay en la institución educativa divididas por su estado (activas, atendidas, en_proceso, falsa.)?
+ 
+ SELECT 
+	i.nombre AS institucion, 
+	a.estado, 
+	COUNT(*) AS cant_emergencias
+ FROM public.alertas a
+ LEFT JOIN public.ubicaciones u ON a.id_ubicacion = u.id_ubicacion
+ INNER JOIN public.instituciones i ON u.id_institucion = i.id_institucion 
+ WHERE i.nombre = 'Instituto Católico Karol Wojtyla' 
+ GROUP BY i.nombre, a.estado; 
+
+ -- Consulta 4: ¿Cuáles son las ubicaciones dentro del la institución que han registrado más de 1 emergencia de cualquier tipo?
+ 
+ SELECT 
+    u.nombre AS zona,
+    COUNT(a.id_alerta) AS total_emergencias
+ FROM public.alertas a
+ INNER JOIN public.ubicaciones u ON a.id_ubicacion = u.id_ubicacion
+ INNER JOIN public.instituciones i ON u.id_institucion = i.id_institucion
+ WHERE i.nombre = 'Instituto Católico Karol Wojtyla'
+ GROUP BY u.nombre
+ HAVING COUNT(a.id_alerta) > 1
+ ORDER BY total_emergencias DESC;
