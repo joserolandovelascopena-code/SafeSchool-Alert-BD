@@ -226,25 +226,28 @@
 
 -- CLASE 1 SEMANA 3: Consultas relacionadas entre tablas
 
--- CONSULTA INNER JOIN 1: Mostrar información más completa de emergencias, mostrando usuario 
--- que la atendio, ubicación y tipo.
+-- CONSULTA INNER JOIN 1: Mostrar información detallada de las emergencias,
+-- incluyendo el usuario que la atendió, el tipo de emergencia y su ubicación.
 
  SELECT 
     alertas.id_alerta,
-    tipos_emergencia.tipo AS emergencia,
-	usuarios.nombre AS usuario_atendio,
-	alertas.descripcion AS descripcion,
+	instituciones.nombre AS institucion,
 	ubicaciones.nombre AS ubicacion,
+    tipos_emergencia.tipo AS emergencia,
+	alertas.descripcion AS descripcion,
+    usuarios.nombre AS usuario_atendio,
     alertas.fecha AS dia_detectada,
     alertas.hora_emerg AS hora,
     alertas.estado
  FROM public.alertas
  LEFT JOIN  public.tipos_emergencia ON alertas.id_tipo = tipos_emergencia.id_tipo
  INNER JOIN public.usuarios ON alertas.id_usuario = usuarios.id_usuario
- INNER JOIN public.ubicaciones ON alertas.id_ubicacion = ubicaciones.id_ubicacion;
+ INNER JOIN public.ubicaciones ON alertas.id_ubicacion = ubicaciones.id_ubicacion
+ INNER JOIN public.instituciones ON ubicaciones.id_institucion = instituciones.id_institucion;
 
--- CONSULTA INNER JOIN 2: Mostrar todas alas ubicaciones del Edificio A, mostrando
--- el tipo de la emergencia, fecha y hora, de la más reciente a la más antigua.
+-- CONSULTA INNER JOIN 2: Mostrar las emergencias registradas en el Edificio A,
+-- indicando el tipo de emergencia, su descripción, fecha, hora y estado,
+-- ordenadas de la más reciente a la más antigua.
 
  SELECT 
     alertas.id_alerta,
