@@ -312,3 +312,84 @@
  GROUP BY u.nombre
  HAVING COUNT(a.id_alerta) > 1
  ORDER BY total_emergencias DESC;
+
+-- CLASE 3 SEMANA 3: Validación e integridad de los datos
+
+-- VALIDACIÓN 1: Datos inconcistentes con el estado de la emergencia y el comando recibido,
+-- el estado no coicide con el comado.
+
+-- Corrección aplicada: 
+
+ SELECT id_alerta, comando_recibido, estado  
+ FROM  public.alertas;
+ 
+ UPDATE public.alertas 
+ SET comando_recibido = 'Seguridad,Edif_C,En_proceso'
+ WHERE id_alerta = 50;
+
+ UPDATE public.alertas 
+ SET comando_recibido = 'Incendio,Edif_A,Atendida'
+ WHERE id_alerta = 51;
+
+ UPDATE public.alertas 
+ SET comando_recibido = 'Incendio,Edif_B,Atendida'
+ WHERE id_alerta = 53;
+
+-- Consulta de comprobación
+ 
+ SELECT id_alerta, comando_recibido, estado  
+ FROM public.alertas;
+
+-- Inconsistencia 2: Registros duplicados en la descripción e información en los registros de emergencia
+-- por incendio.
+
+ SELECT 
+    alertas.id_alerta,
+    tipos_emergencia.tipo AS emergencia,
+    ubicaciones.nombre AS ubicacion,
+    alertas.descripcion AS descripcion
+   
+ FROM public.alertas
+ LEFT JOIN public.tipos_emergencia ON alertas.id_tipo = tipos_emergencia.id_tipo
+ INNER JOIN public.ubicaciones ON alertas.id_ubicacion = ubicaciones.id_ubicacion
+ WHERE tipos_emergencia.tipo = 'Incendio';
+
+-- Corrección aplicada:
+
+ UPDATE public.alertas 
+ SET descripcion = 'Fuga de gas detectada en el área de cocina del Edificio B' 
+ WHERE id_alerta = 53;
+ 
+-- Comprobación
+
+ SELECT 
+    alertas.id_alerta,
+    tipos_emergencia.tipo AS emergencia,
+    ubicaciones.nombre AS ubicacion,
+    alertas.descripcion AS descripcion
+   
+ FROM public.alertas
+ LEFT JOIN public.tipos_emergencia ON alertas.id_tipo = tipos_emergencia.id_tipo
+ INNER JOIN public.ubicaciones ON alertas.id_ubicacion = ubicaciones.id_ubicacion
+ WHERE tipos_emergencia.tipo = 'Incendio';
+
+ -- Inconsistencia 3: Falta una restricción en los valores permitidos para la columna estado
+
+ -- Corrección aplicada:
+ 
+ ALTER TABLE public.alertas 
+ ADD CONSTRAINT check_estado_valido 
+ CHECK (estado IN ('ACTIVA', 'EN_PROCESO', 'ATENDIDA', 'FALSA', 'SEGURO'));
+
+ -- Comprobación:
+
+ SELECT constraint_name, check_clause 
+ FROM information_schema.check_constraints 
+ WHERE constraint_name = 'check_estado_valido';
+
+-- Inconsistencia 4: Tamaño insuficiente en la columna descripcion de la tabla alertas
+
+-- Corrección
+
+ ALTER TABLE public.alertas 
+ ALTER COLUMN descripcion TYPE VARCHAR(300);
