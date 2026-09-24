@@ -53,7 +53,7 @@ INNER JOIN public.ubicaciones ON historial.id_ubicacion = ubicaciones.id_ubicaci
 
 ORDER BY id_historial ASC;
 
---|Consulta descriptiva con INNER JOIN 2 General con ORDER BY DESC|--
+--|Consulta descriptiva con INNER JOIN 3 General con ORDER BY DESC|--
 SELECT 
 		historial.id_historial,
 		usuarios.nombre AS usuario,
@@ -71,7 +71,7 @@ INNER JOIN public.ubicaciones ON historial.id_ubicacion = ubicaciones.id_ubicaci
 
 ORDER BY id_historial DESC;
 
---|Consulta descriptiva con INNER JOIN 2 usando WHERE 'Medica'|--
+--|Consulta descriptiva con INNER JOIN 4 usando WHERE 'Medica'|--
 SELECT 
 		historial.id_historial,
 		usuarios.nombre AS usuario,
@@ -89,7 +89,7 @@ INNER JOIN public.ubicaciones ON historial.id_ubicacion = ubicaciones.id_ubicaci
 
 WHERE tipo = 'Medica';
 
---|Consulta descriptiva con INNER JOIN 3 usando WHERE 'Seguridad'|--
+--|Consulta descriptiva con INNER JOIN 5 usando WHERE 'Seguridad'|--
 SELECT 
 		historial.id_historial,
 		usuarios.nombre AS usuario,
@@ -107,7 +107,7 @@ INNER JOIN public.ubicaciones ON historial.id_ubicacion = ubicaciones.id_ubicaci
 
 WHERE tipo = 'Seguridad';
 
---|Consulta descriptiva con INNER JOIN 4 usando WHERE 'Incendio'|--
+--|Consulta descriptiva con INNER JOIN 6 usando WHERE 'Incendio'|--
 SELECT 
 		historial.id_historial,
 		usuarios.nombre AS usuario,
@@ -125,7 +125,7 @@ INNER JOIN public.ubicaciones ON historial.id_ubicacion = ubicaciones.id_ubicaci
 
 WHERE tipo = 'Incendio';
 
---|Consulta descriptiva con INNER JOIN 5 usando WHERE 'Medica' y ASC|--
+--|Consulta descriptiva con INNER JOIN 7 usando WHERE 'Medica' y ASC|--
 SELECT 
 		historial.id_historial,
 		usuarios.nombre AS usuario,
@@ -145,7 +145,7 @@ WHERE tipo = 'Medica'
 
 ORDER BY id_historial ASC;
 
---|Consulta descriptiva con INNER JOIN 6 usando WHERE 'Medica' y DESC|--
+--|Consulta descriptiva con INNER JOIN 8 usando WHERE 'Medica' y DESC|--
 SELECT 
 		historial.id_historial,
 		usuarios.nombre AS usuario,
@@ -165,7 +165,7 @@ WHERE tipo = 'Medica'
 
 ORDER BY id_historial DESC;
 
---|Consulta descriptiva con INNER JOIN 7 usando WHERE 'Seguridad' y ASC|--
+--|Consulta descriptiva con INNER JOIN 9 usando WHERE 'Seguridad' y ASC|--
 SELECT 
 		historial.id_historial,
 		usuarios.nombre AS usuario,
@@ -185,7 +185,7 @@ WHERE tipo = 'Seguridad'
 
 ORDER BY id_historial ASC;
 
---|Consulta descriptiva con INNER JOIN 8 usando WHERE 'Seguridad' y DESC|--
+--|Consulta descriptiva con INNER JOIN 10 usando WHERE 'Seguridad' y DESC|--
 SELECT 
 		historial.id_historial,
 		usuarios.nombre AS usuario,
@@ -205,7 +205,7 @@ WHERE tipo = 'Seguridad'
 
 ORDER BY id_historial DESC;
 
---|Consulta descriptiva con INNER JOIN 9 usando WHERE 'Incendio' y ASC|--
+--|Consulta descriptiva con INNER JOIN 11 usando WHERE 'Incendio' y ASC|--
 SELECT 
 		historial.id_historial,
 		usuarios.nombre AS usuario,
@@ -225,7 +225,7 @@ WHERE tipo = 'Incendio'
 
 ORDER BY id_historial ASC;
 
---|Consulta descriptiva con INNER JOIN 10 usando WHERE 'Incendio' y DESC|--
+--|Consulta descriptiva con INNER JOIN 12 usando WHERE 'Incendio' y DESC|--
 SELECT 
 		historial.id_historial,
 		usuarios.nombre AS usuario,
