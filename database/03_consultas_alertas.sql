@@ -1,5 +1,7 @@
 -- ALUMNO: ROLANDO VELASCO
 
+-- SEMANA 2: CONSULTAS
+
 -- 1.2. SELECT: 
 -- 1.2.1. CONSULTA 1: Mostrar todas las alertas.
 
@@ -218,4 +220,179 @@
  LEFT JOIN public.tipos_emergencia ON alertas.id_tipo = tipos_emergencia.id_tipo
  INNER JOIN public.ubicaciones ON alertas.id_ubicacion = ubicaciones.id_ubicacion
  GROUP BY (ubicaciones.nombre, tipos_emergencia.tipo);
+
+
+-- SEMANA 3: CONSULTAS
+
+-- CLASE 1 SEMANA 3: Consultas relacionadas entre tablas
+
+-- CONSULTA INNER JOIN 1: Mostrar información detallada de las emergencias,
+-- incluyendo el usuario que la atendió, el tipo de emergencia y su ubicación.
+
+ SELECT 
+    alertas.id_alerta,
+	instituciones.nombre AS institucion,
+	ubicaciones.nombre AS ubicacion,
+    tipos_emergencia.tipo AS emergencia,
+	alertas.descripcion AS descripcion,
+    usuarios.nombre AS usuario_atendio,
+    alertas.fecha AS dia_detectada,
+    alertas.hora_emerg AS hora,
+    alertas.estado
+ FROM public.alertas
+ LEFT JOIN  public.tipos_emergencia ON alertas.id_tipo = tipos_emergencia.id_tipo
+ INNER JOIN public.usuarios ON alertas.id_usuario = usuarios.id_usuario
+ INNER JOIN public.ubicaciones ON alertas.id_ubicacion = ubicaciones.id_ubicacion
+ INNER JOIN public.instituciones ON ubicaciones.id_institucion = instituciones.id_institucion;
+
+-- CONSULTA INNER JOIN 2: Mostrar las emergencias registradas en el Edificio A,
+-- indicando el tipo de emergencia, su descripción, fecha, hora y estado,
+-- ordenadas de la más reciente a la más antigua.
+
+ SELECT 
+    alertas.id_alerta,
+    tipos_emergencia.tipo AS emergencia,
+	alertas.descripcion AS descripcion,
+	ubicaciones.nombre AS ubicacion,
+    alertas.fecha AS dia_detectada,
+    alertas.hora_emerg AS hora,
+    alertas.estado
+ FROM public.alertas
+ LEFT JOIN  public.tipos_emergencia ON alertas.id_tipo = tipos_emergencia.id_tipo
+ INNER JOIN public.ubicaciones ON alertas.id_ubicacion = ubicaciones.id_ubicacion
+ WHERE ubicaciones.nombre = 'Edificio A'
+ ORDER BY alertas.fecha DESC;
+
+
+ -- CLASE 2 SEMANA 3: Consultas de resumen y estadísticas
+
+ -- Consulta 1: ¿Cuantas emergencias por tipo se encuentran activas?
+
+ SELECT  
+   alertas.estado,
+   tipos_emergencia.tipo,
+   COUNT(*) AS cant_emergencias_activas
+ FROM public.alertas 
+ LEFT JOIN public.tipos_emergencia ON alertas.id_tipo = tipos_emergencia.id_tipo
+ WHERE alertas.estado = 'ACTIVA'
+ GROUP BY alertas.estado, tipos_emergencia.tipo;
+
+
+-- Consulta 2: ¿Cuántas emergencias han ocurrido en el la institución educativa según su tipo?
+  
+ SELECT 
+	i.nombre AS institucion, 
+	te.tipo, 
+	COUNT(*) AS cant_emergencias 
+ FROM public.alertas a
+ LEFT JOIN public.tipos_emergencia te ON a.id_tipo = te.id_tipo 
+ INNER JOIN public.ubicaciones u ON a.id_ubicacion = u.id_ubicacion
+ INNER JOIN public.instituciones i ON u.id_institucion = i.id_institucion 
+ WHERE i.nombre = 'Instituto Católico Karol Wojtyla' 
+ GROUP BY i.nombre, te.tipo; 
  
+-- Consulta 3: ¿Cuántas emergencias hay en la institución educativa divididas por su estado (activas, atendidas, en_proceso, falsa.)?
+ 
+ SELECT 
+	i.nombre AS institucion, 
+	a.estado, 
+	COUNT(*) AS cant_emergencias
+ FROM public.alertas a
+ LEFT JOIN public.ubicaciones u ON a.id_ubicacion = u.id_ubicacion
+ INNER JOIN public.instituciones i ON u.id_institucion = i.id_institucion 
+ WHERE i.nombre = 'Instituto Católico Karol Wojtyla' 
+ GROUP BY i.nombre, a.estado; 
+
+ -- Consulta 4: ¿Cuáles son las ubicaciones dentro del la institución que han registrado más de 1 emergencia de cualquier tipo?
+ 
+ SELECT 
+    u.nombre AS zona,
+    COUNT(a.id_alerta) AS total_emergencias
+ FROM public.alertas a
+ INNER JOIN public.ubicaciones u ON a.id_ubicacion = u.id_ubicacion
+ INNER JOIN public.instituciones i ON u.id_institucion = i.id_institucion
+ WHERE i.nombre = 'Instituto Católico Karol Wojtyla'
+ GROUP BY u.nombre
+ HAVING COUNT(a.id_alerta) > 1
+ ORDER BY total_emergencias DESC;
+
+-- CLASE 3 SEMANA 3: Validación e integridad de los datos
+
+-- VALIDACIÓN 1: Datos inconcistentes con el estado de la emergencia y el comando recibido,
+-- el estado no coicide con el comado.
+
+-- Corrección aplicada: 
+
+ SELECT id_alerta, comando_recibido, estado  
+ FROM  public.alertas;
+ 
+ UPDATE public.alertas 
+ SET comando_recibido = 'Seguridad,Edif_C,En_proceso'
+ WHERE id_alerta = 50;
+
+ UPDATE public.alertas 
+ SET comando_recibido = 'Incendio,Edif_A,Atendida'
+ WHERE id_alerta = 51;
+
+ UPDATE public.alertas 
+ SET comando_recibido = 'Incendio,Edif_B,Atendida'
+ WHERE id_alerta = 53;
+
+-- Consulta de comprobación
+ 
+ SELECT id_alerta, comando_recibido, estado  
+ FROM public.alertas;
+
+-- Inconsistencia 2: Registros duplicados en la descripción e información en los registros de emergencia
+-- por incendio.
+
+ SELECT 
+    alertas.id_alerta,
+    tipos_emergencia.tipo AS emergencia,
+    ubicaciones.nombre AS ubicacion,
+    alertas.descripcion AS descripcion
+   
+ FROM public.alertas
+ LEFT JOIN public.tipos_emergencia ON alertas.id_tipo = tipos_emergencia.id_tipo
+ INNER JOIN public.ubicaciones ON alertas.id_ubicacion = ubicaciones.id_ubicacion
+ WHERE tipos_emergencia.tipo = 'Incendio';
+
+-- Corrección aplicada:
+
+ UPDATE public.alertas 
+ SET descripcion = 'Fuga de gas detectada en el área de cocina del Edificio B' 
+ WHERE id_alerta = 53;
+ 
+-- Comprobación
+
+ SELECT 
+    alertas.id_alerta,
+    tipos_emergencia.tipo AS emergencia,
+    ubicaciones.nombre AS ubicacion,
+    alertas.descripcion AS descripcion
+   
+ FROM public.alertas
+ LEFT JOIN public.tipos_emergencia ON alertas.id_tipo = tipos_emergencia.id_tipo
+ INNER JOIN public.ubicaciones ON alertas.id_ubicacion = ubicaciones.id_ubicacion
+ WHERE tipos_emergencia.tipo = 'Incendio';
+
+ -- Inconsistencia 3: Falta una restricción en los valores permitidos para la columna estado
+
+ -- Corrección aplicada:
+ 
+ ALTER TABLE public.alertas 
+ ADD CONSTRAINT check_estado_valido 
+ CHECK (estado IN ('ACTIVA', 'EN_PROCESO', 'ATENDIDA', 'FALSA', 'SEGURO'));
+
+ -- Comprobación:
+
+ SELECT constraint_name, check_clause 
+ FROM information_schema.check_constraints 
+ WHERE constraint_name = 'check_estado_valido';
+
+-- Inconsistencia 4: Tamaño insuficiente en la columna descripcion de la tabla alertas
+
+-- Corrección
+
+ ALTER TABLE public.alertas 
+ ALTER COLUMN descripcion TYPE VARCHAR(300);
