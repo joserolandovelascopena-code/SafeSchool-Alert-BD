@@ -71,7 +71,7 @@ La base de datos está compuesta por las siguientes tablas:
 | `alertas`          | Registra las emergencias y alertas generadas dentro de la institución. |
 | `historial`        | Conserva el registro histórico de las alertas y eventos gestionados.   |
 
----
+
 
 ---
 
