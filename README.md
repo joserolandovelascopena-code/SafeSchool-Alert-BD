@@ -9,9 +9,6 @@ Este repositorio contiene la estructura de la base de datos para el sistema **Sa
 ---
 
 # Tabla de contenido
-
-# Tabla de contenido
-
 - [SafeSchool Alert: Base de Datos](#safeschool-alert-base-de-datos)
 - [Descripción del proyecto](#descripción-del-proyecto)
 - [Base de datos](#base-de-datos)
@@ -240,8 +237,6 @@ Por ejemplo cuando una alerta cambia de un estado "ACTIVA" a "ATENDIDA" al momen
 ### DELETE
 
 La eliminación de alertas, emergencias, usuarios, historial etc. Almacenados en la base de datos del sistema cuando sea necesario la eliminación de registros.
-
----
 
 ---
 
