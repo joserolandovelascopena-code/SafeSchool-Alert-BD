@@ -396,3 +396,4 @@
 
  ALTER TABLE public.alertas 
  ALTER COLUMN descripcion TYPE VARCHAR(300);
+
