@@ -320,7 +320,7 @@ Responsable de la información almacenada de usuarios y consultas de datos de ac
 
 La estructura de la base de datos permite relacionar la información mediante claves foráneas.
 
-![Diagrama ERD de Base de Datos](./modelo/01_Modelo_Fisico.png)
+![Diagrama ERD de Base de Datos](./database/modelo/01_Modelo_Fisico.png)
 
 > [!NOTE]
 > Diagrama Entidad-relación de la base de datos creada en el gestos de bases de datos PostgresSQL.
