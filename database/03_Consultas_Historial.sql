@@ -125,7 +125,7 @@ INNER JOIN public.ubicaciones ON historial.id_ubicacion = ubicaciones.id_ubicaci
 
 WHERE tipo = 'Incendio';
 
---|Consulta descriptiva con INNER JOIN 7 usando WHERE 'Medica' y ORDER BY ASC|--
+--|Consulta descriptiva con INNER JOIN 7 usando WHERE 'Medica' y ASC|--
 SELECT 
 		historial.id_historial,
 		usuarios.nombre AS usuario,
@@ -145,7 +145,7 @@ WHERE tipo = 'Medica'
 
 ORDER BY id_historial ASC;
 
---|Consulta descriptiva con INNER JOIN 8 usando WHERE 'Medica' y ORDER BY DESC|--
+--|Consulta descriptiva con INNER JOIN 8 usando WHERE 'Medica' y DESC|--
 SELECT 
 		historial.id_historial,
 		usuarios.nombre AS usuario,
@@ -165,7 +165,7 @@ WHERE tipo = 'Medica'
 
 ORDER BY id_historial DESC;
 
---|Consulta descriptiva con INNER JOIN 9 usando WHERE 'Seguridad' y ORDER BY ASC|--
+--|Consulta descriptiva con INNER JOIN 9 usando WHERE 'Seguridad' y ASC|--
 SELECT 
 		historial.id_historial,
 		usuarios.nombre AS usuario,
@@ -185,7 +185,7 @@ WHERE tipo = 'Seguridad'
 
 ORDER BY id_historial ASC;
 
---|Consulta descriptiva con INNER JOIN 10 usando WHERE 'Seguridad' y ORDER BY DESC|--
+--|Consulta descriptiva con INNER JOIN 10 usando WHERE 'Seguridad' y DESC|--
 SELECT 
 		historial.id_historial,
 		usuarios.nombre AS usuario,
@@ -205,7 +205,7 @@ WHERE tipo = 'Seguridad'
 
 ORDER BY id_historial DESC;
 
---|Consulta descriptiva con INNER JOIN 11 usando WHERE 'Medica' y ORDER BY ASC|--
+--|Consulta descriptiva con INNER JOIN 11 usando WHERE 'Incendio' y ASC|--
 SELECT 
 		historial.id_historial,
 		usuarios.nombre AS usuario,
@@ -221,11 +221,11 @@ INNER JOIN public.alertas ON historial.id_alerta = alertas.id_alerta
 INNER JOIN public.tipos_emergencia ON historial.id_tipo = tipos_emergencia.id_tipo
 INNER JOIN public.ubicaciones ON historial.id_ubicacion = ubicaciones.id_ubicacion
 
-WHERE tipo = 'Medica'
+WHERE tipo = 'Incendio'
 
 ORDER BY id_historial ASC;
 
---|Consulta descriptiva con INNER JOIN 12 usando WHERE 'Incendio' y ORDER BY DESC|--
+--|Consulta descriptiva con INNER JOIN 12 usando WHERE 'Incendio' y DESC|--
 SELECT 
 		historial.id_historial,
 		usuarios.nombre AS usuario,

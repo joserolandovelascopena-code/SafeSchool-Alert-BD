@@ -11,6 +11,9 @@ Este repositorio contiene la estructura de la base de datos para el sistema **Sa
 # Tabla de contenido
 - [SafeSchool Alert: Base de Datos](#safeschool-alert-base-de-datos)
 - [Descripción del proyecto](#descripción-del-proyecto)
+- [Problema](#Problema)
+- [Solución](#solución)
+- [Objetivos](#objetivos)
 - [Base de datos](#base-de-datos)
   - [Nombre de la base de datos](#nombre-de-la-base-de-datos)
   - [Sistema gestor](#sistema-gestor)
@@ -34,6 +37,32 @@ Este repositorio contiene la estructura de la base de datos para el sistema **Sa
 El sistema integra una aplicación móvil desarrollada con **MIT App Inventor** y un sistema electrónico basado en **Arduino Uno**, permitiendo detectar, registrar y gestionar diferentes tipos de emergencias.
 
 La base de datos desarrollada en **PostgreSQL** permite almacenar la información necesaria para el funcionamiento del sistema, incluyendo instituciones, usuarios, ubicaciones, tipos de emergencia, alertas e historial de emergencias detectadas.
+
+---
+
+## Problema
+
+Los problemas dentro de los salones escolares son algo que ocurre todo el tiempo, ya sean emergencias médicas, peleas entre estudiantes o decomiso de artículos. Actualmente, en el instituto, cuando ocurren problemas, solamente se notifica por mensaje o llamada y, en el peor de los casos, los docentes tienen que ir directamente a dirección, lo que, en caso de algo muy urgente, puede poner en riesgo la salud del estudiante o docente si se trata de una emergencia médica. 
+
+---
+
+## Solución
+
+Ante esta problemática, se ve la necesidad de implementar un sistema de alertas desarrollado en **MIT App Inventor** que sea capaz de alertar de manera más eficiente cuando surjan emergencias en la institución. El uso de este permitiría actuar de manera más rápida y evitar riesgos dentro de la institución, además de salvaguardar la seguridad de estudiantes y docentes del Instituto Católico Karol Wojtyla. Asimismo, podría brindar un nuevo nivel de seguridad a la institución. 
+
+---
+
+## Objetivos
+
+**General**
+
+Desarrollar un sistema inteligente de alertas escolares utilizando MIT App Inventor y una Base de Datos de PostgreSQL para almacenar las emergencias que ocurran en el instituto.
+
+**Especificos**
+
+- Diseñar un sistema que mejore la seguridad dentro de la institución educativa mediante el uso de tecnologías,  para un entorno escolar más seguro para estudiantes, docentes y personal administrativo.
+
+- Mejorar el tiempo de respuesta del personal docente y administrativo ante situaciones de emergencia, mediante el envío de notificaciones que permita actuar de manera más rápida.  
 
 ---
 
