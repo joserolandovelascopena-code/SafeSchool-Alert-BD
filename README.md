@@ -437,60 +437,65 @@ El proyecto general SafeSchool Alert también utiliza **MIT App Inventor, Arduin
 
 ## Evidencias
 
+En esta sección se deben consultar los documentos y archivos que muestran los avances realizados por el equipo.
 
+- [Carpeta de evidencias del repositorio](./evidencias/)
+- [Carpeta de scripts de la base de datos](./database/)
+
+Dentro de estas carpetas se deben mantener los archivos que realmente estén incluidos en el repositorio, como documentos de avance, scripts SQL, diagramas y capturas de las pruebas realizadas.
 
 ---
 
-## Enlace de Documento final
+## Documento de avance
 
+El documento de avance del proyecto debe incluir la descripción del trabajo realizado, la estructura de la base de datos, las consultas SQL, las relaciones entre las tablas y las evidencias correspondientes.
 
+**Enlace al documento:** pendiente de agregar cuando el archivo esté publicado en el repositorio o en una ubicación accesible para el docente.
 
 ---
 
 ## Estado del proyecto
 
-### Aplicación
+El proyecto se encuentra en desarrollo. El estado de cada componente debe actualizarse conforme se terminen y comprueben las actividades.
 
-- [X] La aplicación abre correctamente.
-- [X] Las funcionalidades principales funcionan.
-- [X] Las pantallas estan conectadas correctamente.
-- [ ] Se realizaron pruebas.
-- [X] Se corrigieron errores.
-- [ ] Archivo .aia.
-- [ ] APK.
+### Aplicación móvil
+
+- [x] La aplicación abre correctamente.
+- [x] Las pantallas principales están conectadas.
+- [x] Se completaron y documentaron las pruebas de todas las funcionalidades, solicitadas en el primer avance del proyecto.
+- [x] Se agregó el archivo `.aia` al repositorio.
+- [x] Se generó y comprobó el archivo APK.
 
 ### Base de datos
 
-- [X] Las tablas estan definidas.
-- [X] Las relaciones estan documentadas.
-- [X] Existen datos de prueba.
-- [X] Las consultas principales funcionan.
-- [ ] Se documento la correspondencia APP-BD.
+- [x] Se definieron las seis tablas principales.
+- [x] Se documentaron las relaciones entre las tablas.
+- [x] Se prepararon datos de prueba.
+- [x] Se desarrollaron consultas SQL principales.
+- [x] Se documentó la correspondencia prevista entre la aplicación y la base de datos.
 
 ### GitHub
 
-- [X] El repositorio esta actualizado.
-- [X] Existe README.
-- [ ] Los archivos estan organizados.
-- [X] Existen commits.
+- [x] Se creó el repositorio.
+- [x] Se agregó el archivo README.g
+- [x] Se registraron cambios mediante commits.
 
-### Documentación
+### Documentación del proyecto
 
 - [ ] Alcances y limitaciones.
-- [ ] Diseño.
+- [ ] Diseño del sistema.
 - [ ] Desarrollo.
 - [ ] Base de datos.
 - [ ] Integración.
 - [ ] Pruebas.
 - [ ] Manual de usuario.
-- [ ] Manual tecnico.
+- [ ] Manual técnico.
 - [ ] Conclusiones.
 - [ ] Recomendaciones.
 - [ ] Bibliografía.
-- [ ] Anexsos.
+- [ ] Anexos.
 
----
-
+--- 
 # Estructura del repositorio
 
 La organización propuesta para los archivos de la base de datos es:
