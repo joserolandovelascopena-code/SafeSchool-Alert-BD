@@ -9,6 +9,7 @@ Este repositorio contiene la estructura de la base de datos para el sistema **Sa
 ---
 
 # Tabla de contenido
+
 - [SafeSchool Alert: Base de Datos](#safeschool-alert-base-de-datos)
 - [Descripción del proyecto](#descripción-del-proyecto)
 - [Problema](#Problema)
@@ -50,13 +51,13 @@ La base de datos desarrollada en **PostgreSQL** permite almacenar la informació
 
 ## Problema
 
-Los problemas dentro de los salones escolares son algo que ocurre todo el tiempo, ya sean emergencias médicas, peleas entre estudiantes o decomiso de artículos. Actualmente, en el instituto, cuando ocurren problemas, solamente se notifica por mensaje o llamada y, en el peor de los casos, los docentes tienen que ir directamente a dirección, lo que, en caso de algo muy urgente, puede poner en riesgo la salud del estudiante o docente si se trata de una emergencia médica. 
+Los problemas dentro de los salones escolares son algo que ocurre todo el tiempo, ya sean emergencias médicas, peleas entre estudiantes o decomiso de artículos. Actualmente, en el instituto, cuando ocurren problemas, solamente se notifica por mensaje o llamada y, en el peor de los casos, los docentes tienen que ir directamente a dirección, lo que, en caso de algo muy urgente, puede poner en riesgo la salud del estudiante o docente si se trata de una emergencia médica.
 
 ---
 
 ## Solución
 
-Ante esta problemática, se ve la necesidad de implementar un sistema de alertas desarrollado en **MIT App Inventor** que sea capaz de alertar de manera más eficiente cuando surjan emergencias en la institución. El uso de este permitiría actuar de manera más rápida y evitar riesgos dentro de la institución, además de salvaguardar la seguridad de estudiantes y docentes del Instituto Católico Karol Wojtyla. Asimismo, podría brindar un nuevo nivel de seguridad a la institución. 
+Ante esta problemática, se ve la necesidad de implementar un sistema de alertas desarrollado en **MIT App Inventor** que sea capaz de alertar de manera más eficiente cuando surjan emergencias en la institución. El uso de este permitiría actuar de manera más rápida y evitar riesgos dentro de la institución, además de salvaguardar la seguridad de estudiantes y docentes del Instituto Católico Karol Wojtyla. Asimismo, podría brindar un nuevo nivel de seguridad a la institución.
 
 ---
 
@@ -68,9 +69,9 @@ Desarrollar un sistema inteligente de alertas escolares utilizando MIT App Inven
 
 **Especificos**
 
-- Diseñar un sistema que mejore la seguridad dentro de la institución educativa mediante el uso de tecnologías,  para un entorno escolar más seguro para estudiantes, docentes y personal administrativo.
+- Diseñar un sistema que mejore la seguridad dentro de la institución educativa mediante el uso de tecnologías, para un entorno escolar más seguro para estudiantes, docentes y personal administrativo.
 
-- Mejorar el tiempo de respuesta del personal docente y administrativo ante situaciones de emergencia, mediante el envío de notificaciones que permita actuar de manera más rápida.  
+- Mejorar el tiempo de respuesta del personal docente y administrativo ante situaciones de emergencia, mediante el envío de notificaciones que permita actuar de manera más rápida.
 
 ---
 
@@ -107,8 +108,6 @@ La base de datos está compuesta por las siguientes tablas:
 | `tipos_emergencia` | Contiene los tipos de emergencia que puede manejar el sistema.         |
 | `alertas`          | Registra las emergencias y alertas generadas dentro de la institución. |
 | `historial`        | Conserva el registro histórico de las alertas y eventos gestionados.   |
-
-
 
 ---
 
@@ -326,17 +325,17 @@ Responsable de la información almacenada de usuarios y consultas de datos de ac
 
 ## Funcionalidades
 
-- **Datos en tiempo real:** La aplicación muestra los cambios en la seguridad de la institución en tiempo real por medio de bases de datos que guardan la información del momento para que la aplicación llame estos datos y los muestre según cambien. 
+- **Datos en tiempo real:** La aplicación muestra los cambios en la seguridad de la institución en tiempo real por medio de bases de datos que guardan la información del momento para que la aplicación llame estos datos y los muestre según cambien.
 
-- **Inicio de sesión/Registro:** La aplicación permite registrar un nuevo usuario por medio de un nombre, correo electrónico y una contraseña para posteriormente poder iniciar sesión. Dichos datos se guardan en dos bases de datos, TinyDB para guardar los datos localmente y CloudDB para poder consultar datos desde cualquier dispositivo. 
+- **Inicio de sesión/Registro:** La aplicación permite registrar un nuevo usuario por medio de un nombre, correo electrónico y una contraseña para posteriormente poder iniciar sesión. Dichos datos se guardan en dos bases de datos, TinyDB para guardar los datos localmente y CloudDB para poder consultar datos desde cualquier dispositivo.
 
 - **Edición de perfil:** En la pantalla de perfil se pueden observar la información personal ya sea nombre o correo, la aplicación permite agregar más datos a tu perfil por ejemplo número de teléfono u ocupación, también podrás cambiar tu nombre en caso que al momento de crear la cuanta cometiste alguna equivocación.
 
-- **Vibración y sonido de alarma:** La aplicación cuenta con un sistema que hace vibrar el dispositivo y también emitir una alarma para que en caso de estar distraído u ocupado ayudaría a darse cuenta que ha ocurrido una emergencia en la institución. 
+- **Vibración y sonido de alarma:** La aplicación cuenta con un sistema que hace vibrar el dispositivo y también emitir una alarma para que en caso de estar distraído u ocupado ayudaría a darse cuenta que ha ocurrido una emergencia en la institución.
 
 - **Notificaciones:** La aplicación envía notificaciones en caso de que se detecte una emergencia y esta función también puede ser utilizada para notificar alguna reunión o cuando se despacha temprano por medio de la pantalla de creación de notificación.
 
-- **Historial:** La aplicación cuenta con historial de emergencia ocurridas la cual funciona por medio de base de datos y que se actualiza en tiempo real para mostrar lo que ha ocurrido en esta función se puede utilizar para tener un registro de incidencias en la institución. 
+- **Historial:** La aplicación cuenta con historial de emergencia ocurridas la cual funciona por medio de base de datos y que se actualiza en tiempo real para mostrar lo que ha ocurrido en esta función se puede utilizar para tener un registro de incidencias en la institución.
 
 ---
 
@@ -439,9 +438,10 @@ El proyecto general SafeSchool Alert también utiliza **MIT App Inventor, Arduin
 
 En esta sección se proporcionan los archivos que muestran el trabajo realizado y los avances del proyecto SafeSchool Alert. Se incluyen las evidencias del desarrollo, como documentos, capturas y otros archivos relacionados con el proyecto, así como los scripts SQL utilizados para la creación y el manejo de la base de datos.
 
-- [Carpeta de evidencias del repositorio](./evidencias/)
+- [Carpeta de evidencias de pruebas de la aplicación móvil](./pruebas/evidencias/)
+- [Carpeta de evidencias de la aplicación móvil](./app-inventor/evidencia/)
+- [Carpeta de evidencias base de datos](./database/Evidencias/)
 - [Carpeta de scripts de la base de datos](./database/)
-
 
 ---
 
@@ -449,13 +449,14 @@ En esta sección se proporcionan los archivos que muestran el trabajo realizado 
 
 En este apartado se proporciona el documento de avance del proyecto SafeSchool Alert, donde se presenta el trabajo realizado hasta el momento, incluyendo la estructura de la base de datos, la creación de las tablas, las relaciones entre ellas, las consultas SQL y las evidencias que muestran el desarrollo realizado por el equipo.
 
-Enlace al documento: 
-
+-- [Enlace al documento](./documentación/E1_AvanceTecnico_SafeSchool_Alert_2026.pdf)
 
 ---
 
 ## Estado del proyecto
+
 A continuación se detalla el estado general del del desarrollo del proyecto de graduación. La fase de desarrollo técnico, base de datos y control de versiones está finalizada, la relización de pruebas. Queda pendiente el desarrollo de la documentacion final del proyecto.
+
 ### Aplicación móvil
 
 - [x] La aplicación abre correctamente.
@@ -493,7 +494,8 @@ A continuación se detalla el estado general del del desarrollo del proyecto de 
 - [ ] Bibliografía.
 - [ ] Anexos.
 
---- 
+---
+
 # Estructura del repositorio
 
 La organización propuesta para los archivos de la base de datos es:
