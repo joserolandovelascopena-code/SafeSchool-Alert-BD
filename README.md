@@ -18,13 +18,21 @@ Este repositorio contiene la estructura de la base de datos para el sistema **Sa
   - [Nombre de la base de datos](#nombre-de-la-base-de-datos)
   - [Sistema gestor](#sistema-gestor)
 - [Estructura de la base de datos](#estructura-de-la-base-de-datos)
-- [Funciones de la aplicación y correspondencia App–BD](#funciones-de-la-aplicación-y-correspondencia-appbd)
+- [Correspondencia](#funciones-de-la-aplicación-y-correspondencia-appbd)
 - [Consultas principales](#consultas-principales)
 - [Operaciones SQL relacionadas con la aplicación](#operaciones-sql-relacionadas-con-la-aplicación)
 - [Seguridad](#seguridad)
 - [Integrantes y responsabilidades](#integrantes-y-responsabilidades)
+- [Funcionalidades](#funcionalidades)
 - [Relaciones entre las tablas](#relaciones-entre-las-tablas)
 - [Tecnologías utilizadas](#tecnologías-utilizadas)
+- [Evidencias](#evidencias)
+- [Enlace de documento final](#enlace-de-documento-final)
+- [Estado del proyecto](#estado-del-proyecto)
+  - [Aplicación](#aplicación)
+  - [Base de datos](#base-de-datos)
+  - [GitHub](#github)
+  - [Documentación](#documentación)
 - [Estructura del repositorio](#estructura-del-repositorio)
 - [Instalación y Configuración](#instalación-y-configuración)
   - [1. Prerrequisitos](#1-prerrequisitos)
@@ -104,7 +112,7 @@ La base de datos está compuesta por las siguientes tablas:
 
 ---
 
-## Funciones de la aplicación y correspondencia App–BD
+## Correspondencia
 
 SafeSchool Alert utiliza información almacenada en PostgreSQL para realizar diferentes funciones dentro de la aplicación. La siguiente tabla muestra la relación entre las principales funciones de la aplicación móvil, las tablas de la base de datos y las operaciones SQL que serán necesarias para la aplicación pueda funcionar gestioanar cada una de las emergencias de forma correcta.
 
@@ -316,6 +324,22 @@ Responsable de la información almacenada de usuarios y consultas de datos de ac
 
 ---
 
+## Funcionalidades
+
+- **Datos en tiempo real:** La aplicación muestra los cambios en la seguridad de la institución en tiempo real por medio de bases de datos que guardan la información del momento para que la aplicación llame estos datos y los muestre según cambien. 
+
+- **Inicio de sesión/Registro:** La aplicación permite registrar un nuevo usuario por medio de un nombre, correo electrónico y una contraseña para posteriormente poder iniciar sesión. Dichos datos se guardan en dos bases de datos, TinyDB para guardar los datos localmente y CloudDB para poder consultar datos desde cualquier dispositivo. 
+
+- **Edición de perfil:** En la pantalla de perfil se pueden observar la información personal ya sea nombre o correo, la aplicación permite agregar más datos a tu perfil por ejemplo número de teléfono u ocupación, también podrás cambiar tu nombre en caso que al momento de crear la cuanta cometiste alguna equivocación.
+
+- **Vibración y sonido de alarma:** La aplicación cuenta con un sistema que hace vibrar el dispositivo y también emitir una alarma para que en caso de estar distraído u ocupado ayudaría a darse cuenta que ha ocurrido una emergencia en la institución. 
+
+- **Notificaciones:** La aplicación envía notificaciones en caso de que se detecte una emergencia y esta función también puede ser utilizada para notificar alguna reunión o cuando se despacha temprano por medio de la pantalla de creación de notificación.
+
+- **Historial:** La aplicación cuenta con historial de emergencia ocurridas la cual funciona por medio de base de datos y que se actualiza en tiempo real para mostrar lo que ha ocurrido en esta función se puede utilizar para tener un registro de incidencias en la institución. 
+
+---
+
 ## Relaciones entre las tablas
 
 La estructura de la base de datos permite relacionar la información mediante claves foráneas.
@@ -408,6 +432,62 @@ La tabla `historial` utiliza `id_alerta` como clave foránea.
 | **GitHub**             | Almacenamiento del repositorio y trabajo colaborativo. |
 
 El proyecto general SafeSchool Alert también utiliza **MIT App Inventor, Arduino Uno, C++, Bluetooth HC-05, CloudDB y Tinkercad** como parte de la aplicación y del sistema electrónico.
+
+---
+
+## Evidencias
+
+
+
+---
+
+## Enlace de Documento final
+
+
+
+---
+
+## Estado del proyecto
+
+### Aplicación
+
+- [X] La aplicación abre correctamente.
+- [X] Las funcionalidades principales funcionan.
+- [X] Las pantallas estan conectadas correctamente.
+- [ ] Se realizaron pruebas.
+- [X] Se corrigieron errores.
+- [ ] Archivo .aia.
+- [ ] APK.
+
+### Base de datos
+
+- [X] Las tablas estan definidas.
+- [X] Las relaciones estan documentadas.
+- [X] Existen datos de prueba.
+- [X] Las consultas principales funcionan.
+- [ ] Se documento la correspondencia APP-BD.
+
+### GitHub
+
+- [X] El repositorio esta actualizado.
+- [X] Existe README.
+- [ ] Los archivos estan organizados.
+- [X] Existen commits.
+
+### Documentación
+
+- [ ] Alcances y limitaciones.
+- [ ] Diseño.
+- [ ] Desarrollo.
+- [ ] Base de datos.
+- [ ] Integración.
+- [ ] Pruebas.
+- [ ] Manual de usuario.
+- [ ] Manual tecnico.
+- [ ] Conclusiones.
+- [ ] Recomendaciones.
+- [ ] Bibliografía.
+- [ ] Anexsos.
 
 ---
 
