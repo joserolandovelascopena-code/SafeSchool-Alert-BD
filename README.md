@@ -1,4 +1,4 @@
-![Banner repo](./evidencias/recursos/banner_BD.png)
+![Banner repo](./evidencias/recursos/banner_proyecto.png)
 
 # SafeSchool Alert: Base de Datos
 
