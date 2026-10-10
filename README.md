@@ -437,27 +437,25 @@ El proyecto general SafeSchool Alert también utiliza **MIT App Inventor, Arduin
 
 ## Evidencias
 
-En esta sección se deben consultar los documentos y archivos que muestran los avances realizados por el equipo.
+En esta sección se proporcionan los archivos que muestran el trabajo realizado y los avances del proyecto SafeSchool Alert. Se incluyen las evidencias del desarrollo, como documentos, capturas y otros archivos relacionados con el proyecto, así como los scripts SQL utilizados para la creación y el manejo de la base de datos.
 
 - [Carpeta de evidencias del repositorio](./evidencias/)
 - [Carpeta de scripts de la base de datos](./database/)
 
-Dentro de estas carpetas se deben mantener los archivos que realmente estén incluidos en el repositorio, como documentos de avance, scripts SQL, diagramas y capturas de las pruebas realizadas.
 
 ---
 
 ## Documento de avance
 
-El documento de avance del proyecto debe incluir la descripción del trabajo realizado, la estructura de la base de datos, las consultas SQL, las relaciones entre las tablas y las evidencias correspondientes.
+En este apartado se proporciona el documento de avance del proyecto SafeSchool Alert, donde se presenta el trabajo realizado hasta el momento, incluyendo la estructura de la base de datos, la creación de las tablas, las relaciones entre ellas, las consultas SQL y las evidencias que muestran el desarrollo realizado por el equipo.
 
-**Enlace al documento:** pendiente de agregar cuando el archivo esté publicado en el repositorio o en una ubicación accesible para el docente.
+Enlace al documento: 
+
 
 ---
 
 ## Estado del proyecto
-
-El proyecto se encuentra en desarrollo. El estado de cada componente debe actualizarse conforme se terminen y comprueben las actividades.
-
+A continuación se detalla el estado general del del desarrollo del proyecto de graduación. La fase de desarrollo técnico, base de datos y control de versiones está finalizada, la relización de pruebas. Queda pendiente el desarrollo de la documentacion final del proyecto.
 ### Aplicación móvil
 
 - [x] La aplicación abre correctamente.
