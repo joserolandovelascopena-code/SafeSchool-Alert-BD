@@ -18,13 +18,21 @@ Este repositorio contiene la estructura de la base de datos para el sistema **Sa
   - [Nombre de la base de datos](#nombre-de-la-base-de-datos)
   - [Sistema gestor](#sistema-gestor)
 - [Estructura de la base de datos](#estructura-de-la-base-de-datos)
-- [Funciones de la aplicación y correspondencia App–BD](#funciones-de-la-aplicación-y-correspondencia-appbd)
+- [Correspondencia](#funciones-de-la-aplicación-y-correspondencia-appbd)
 - [Consultas principales](#consultas-principales)
 - [Operaciones SQL relacionadas con la aplicación](#operaciones-sql-relacionadas-con-la-aplicación)
 - [Seguridad](#seguridad)
 - [Integrantes y responsabilidades](#integrantes-y-responsabilidades)
+- [Funcionalidades](#funcionalidades)
 - [Relaciones entre las tablas](#relaciones-entre-las-tablas)
 - [Tecnologías utilizadas](#tecnologías-utilizadas)
+- [Evidencias](#evidencias)
+- [Enlace de documento final](#enlace-de-documento-final)
+- [Estado del proyecto](#estado-del-proyecto)
+  - [Aplicación](#aplicación)
+  - [Base de datos](#base-de-datos)
+  - [GitHub](#github)
+  - [Documentación](#documentación)
 - [Estructura del repositorio](#estructura-del-repositorio)
 - [Instalación y Configuración](#instalación-y-configuración)
   - [1. Prerrequisitos](#1-prerrequisitos)
@@ -104,7 +112,7 @@ La base de datos está compuesta por las siguientes tablas:
 
 ---
 
-## Funciones de la aplicación y correspondencia App–BD
+## Correspondencia
 
 SafeSchool Alert utiliza información almacenada en PostgreSQL para realizar diferentes funciones dentro de la aplicación. La siguiente tabla muestra la relación entre las principales funciones de la aplicación móvil, las tablas de la base de datos y las operaciones SQL que serán necesarias para la aplicación pueda funcionar gestioanar cada una de las emergencias de forma correcta.
 
@@ -316,6 +324,22 @@ Responsable de la información almacenada de usuarios y consultas de datos de ac
 
 ---
 
+## Funcionalidades
+
+- **Datos en tiempo real:** La aplicación muestra los cambios en la seguridad de la institución en tiempo real por medio de bases de datos que guardan la información del momento para que la aplicación llame estos datos y los muestre según cambien. 
+
+- **Inicio de sesión/Registro:** La aplicación permite registrar un nuevo usuario por medio de un nombre, correo electrónico y una contraseña para posteriormente poder iniciar sesión. Dichos datos se guardan en dos bases de datos, TinyDB para guardar los datos localmente y CloudDB para poder consultar datos desde cualquier dispositivo. 
+
+- **Edición de perfil:** En la pantalla de perfil se pueden observar la información personal ya sea nombre o correo, la aplicación permite agregar más datos a tu perfil por ejemplo número de teléfono u ocupación, también podrás cambiar tu nombre en caso que al momento de crear la cuanta cometiste alguna equivocación.
+
+- **Vibración y sonido de alarma:** La aplicación cuenta con un sistema que hace vibrar el dispositivo y también emitir una alarma para que en caso de estar distraído u ocupado ayudaría a darse cuenta que ha ocurrido una emergencia en la institución. 
+
+- **Notificaciones:** La aplicación envía notificaciones en caso de que se detecte una emergencia y esta función también puede ser utilizada para notificar alguna reunión o cuando se despacha temprano por medio de la pantalla de creación de notificación.
+
+- **Historial:** La aplicación cuenta con historial de emergencia ocurridas la cual funciona por medio de base de datos y que se actualiza en tiempo real para mostrar lo que ha ocurrido en esta función se puede utilizar para tener un registro de incidencias en la institución. 
+
+---
+
 ## Relaciones entre las tablas
 
 La estructura de la base de datos permite relacionar la información mediante claves foráneas.
@@ -411,6 +435,65 @@ El proyecto general SafeSchool Alert también utiliza **MIT App Inventor, Arduin
 
 ---
 
+## Evidencias
+
+En esta sección se proporcionan los archivos que muestran el trabajo realizado y los avances del proyecto SafeSchool Alert. Se incluyen las evidencias del desarrollo, como documentos, capturas y otros archivos relacionados con el proyecto, así como los scripts SQL utilizados para la creación y el manejo de la base de datos.
+
+- [Carpeta de evidencias del repositorio](./evidencias/)
+- [Carpeta de scripts de la base de datos](./database/)
+
+
+---
+
+## Documento de avance
+
+En este apartado se proporciona el documento de avance del proyecto SafeSchool Alert, donde se presenta el trabajo realizado hasta el momento, incluyendo la estructura de la base de datos, la creación de las tablas, las relaciones entre ellas, las consultas SQL y las evidencias que muestran el desarrollo realizado por el equipo.
+
+Enlace al documento: 
+
+
+---
+
+## Estado del proyecto
+A continuación se detalla el estado general del del desarrollo del proyecto de graduación. La fase de desarrollo técnico, base de datos y control de versiones está finalizada, la relización de pruebas. Queda pendiente el desarrollo de la documentacion final del proyecto.
+### Aplicación móvil
+
+- [x] La aplicación abre correctamente.
+- [x] Las pantallas principales están conectadas.
+- [x] Se completaron y documentaron las pruebas de todas las funcionalidades, solicitadas en el primer avance del proyecto.
+- [x] Se agregó el archivo `.aia` al repositorio.
+- [x] Se generó y comprobó el archivo APK.
+
+### Base de datos
+
+- [x] Se definieron las seis tablas principales.
+- [x] Se documentaron las relaciones entre las tablas.
+- [x] Se prepararon datos de prueba.
+- [x] Se desarrollaron consultas SQL principales.
+- [x] Se documentó la correspondencia prevista entre la aplicación y la base de datos.
+
+### GitHub
+
+- [x] Se creó el repositorio.
+- [x] Se agregó el archivo README.g
+- [x] Se registraron cambios mediante commits.
+
+### Documentación del proyecto
+
+- [ ] Alcances y limitaciones.
+- [ ] Diseño del sistema.
+- [ ] Desarrollo.
+- [ ] Base de datos.
+- [ ] Integración.
+- [ ] Pruebas.
+- [ ] Manual de usuario.
+- [ ] Manual técnico.
+- [ ] Conclusiones.
+- [ ] Recomendaciones.
+- [ ] Bibliografía.
+- [ ] Anexos.
+
+--- 
 # Estructura del repositorio
 
 La organización propuesta para los archivos de la base de datos es:
