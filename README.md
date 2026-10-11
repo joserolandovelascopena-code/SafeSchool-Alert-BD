@@ -8,7 +8,7 @@ Este repositorio contiene la estructura de la base de datos para el sistema **Sa
 
 ---
 
-# Tabla de contenido
+# Tabla de contenidoli
 
 - [SafeSchool Alert: Base de Datos](#safeschool-alert-base-de-datos)
 - [Descripción del proyecto](#descripción-del-proyecto)
@@ -325,17 +325,35 @@ Responsable de la información almacenada de usuarios y consultas de datos de ac
 
 ## Funcionalidades
 
-- **Datos en tiempo real:** La aplicación muestra los cambios en la seguridad de la institución en tiempo real por medio de bases de datos que guardan la información del momento para que la aplicación llame estos datos y los muestre según cambien.
+- **Registro de usuarios:** Permite registrar nuevos usuarios mediante su nombre, correo electrónico y contraseña.
 
-- **Inicio de sesión/Registro:** La aplicación permite registrar un nuevo usuario por medio de un nombre, correo electrónico y una contraseña para posteriormente poder iniciar sesión. Dichos datos se guardan en dos bases de datos, TinyDB para guardar los datos localmente y CloudDB para poder consultar datos desde cualquier dispositivo.
+- **Inicio de sesión:** Permite a los usuarios registrados acceder a la aplicación utilizando sus credenciales.
 
-- **Edición de perfil:** En la pantalla de perfil se pueden observar la información personal ya sea nombre o correo, la aplicación permite agregar más datos a tu perfil por ejemplo número de teléfono u ocupación, también podrás cambiar tu nombre en caso que al momento de crear la cuanta cometiste alguna equivocación.
+- **Cierre de sesión:** Permite cerrar la sesión de la cuenta actual.
 
-- **Vibración y sonido de alarma:** La aplicación cuenta con un sistema que hace vibrar el dispositivo y también emitir una alarma para que en caso de estar distraído u ocupado ayudaría a darse cuenta que ha ocurrido una emergencia en la institución.
+- **Comunicación con Arduino Uno mediante Bluetooth:** Establece la comunicación entre la aplicación móvil y el Arduino Uno mediante el módulo Bluetooth HC-05, permitiendo intercambiar información relacionada con las emergencias.
 
-- **Notificaciones:** La aplicación envía notificaciones en caso de que se detecte una emergencia y esta función también puede ser utilizada para notificar alguna reunión o cuando se despacha temprano por medio de la pantalla de creación de notificación.
+- **Activación manual de emergencias:** Permite activar emergencias desde la aplicación, seleccionando el tipo de emergencia y la ubicación correspondiente.
 
-- **Historial:** La aplicación cuenta con historial de emergencia ocurridas la cual funciona por medio de base de datos y que se actualiza en tiempo real para mostrar lo que ha ocurrido en esta función se puede utilizar para tener un registro de incidencias en la institución.
+- **Gestión de estados de las emergencias:** Permite actualizar el estado de una emergencia a _en proceso_, _atendida_ o _falsa alarma_, facilitando su seguimiento.
+
+- **Gestión de emergencias por reconocimiento de voz:** Permite utilizar instrucciones de voz para realizar acciones relacionadas con la gestión de emergencias, como atenderlas o cambiar su estado.
+
+- **Ubicación de las emergencias:** Permite identificar y visualizar en un mapa de la institución educativa el lugar donde se ha generado una emergencia, junto con información sobre el tipo de incidente.
+
+- **Historial de emergencias:** Permite consultar las emergencias registradas, incluyendo información como el tipo de emergencia, la fecha y el usuario encargado de atenderla.
+
+- **Gestión del perfil de usuario:** Incluye una sección destinada a consultar y gestionar la información de la cuenta del usuario. Algunas funciones de esta sección continúan en desarrollo.
+
+- **Creación y publicación de avisos y comunicados:** Permite a los usuarios autorizados crear avisos para comunicar información importante a la comunidad educativa.
+
+- **Configuración de la aplicación:** Permite configurar opciones relacionadas con Bluetooth, alarmas, vibraciones y mensajes SMS.
+
+### Funcionalidades en desarrollo
+
+- **Ubicación de la institución educativa:** Se encuentra en desarrollo la función destinada a mostrar cómo llegar a la institución y facilitar la identificación de lugares cercanos relacionados con la atención de emergencias.
+
+- **Cambio de foto de perfil:** Se encuentra en desarrollo la opción para cambiar la imagen de perfil del usuario.
 
 ---
 
@@ -449,7 +467,7 @@ En esta sección se proporcionan los archivos que muestran el trabajo realizado 
 
 En este apartado se proporciona el documento de avance del proyecto SafeSchool Alert, donde se presenta el trabajo realizado hasta el momento, incluyendo la estructura de la base de datos, la creación de las tablas, las relaciones entre ellas, las consultas SQL y las evidencias que muestran el desarrollo realizado por el equipo.
 
--- [Enlace al documento](./documentación/E1_AvanceTecnico_SafeSchool_Alert_2026.pdf)
+- [Enlace al documento](./documentación/E1_AvanceTecnico_SafeSchool_Alert_2026.pdf)
 
 ---
 
@@ -502,36 +520,49 @@ La organización propuesta para los archivos de la base de datos es:
 
 ```text
 SafeSchool-Alert-BD/
-│
+├── app-inventor/
+│   ├── proyecto_SafeSchool.aia
+│   ├── apk/
+│   │   └── SafeSchool_Alert.apk
+│   └── evidencia/
+│       ├── capturas-trabajo-equipo/
+│       │
+│       └── Capturas de las pantallas de la aplicación
 ├── database/
 │   ├── 01_scripts_estructura.sql
 │   ├── 02_datos_prueba_alertas.sql
-│   ├── 03_consultas_alertas.sql
 │   ├── 02_datos_prueba_usuarios.sql
+│   ├── 02_Script_historial_Datos_Prueba.sql
+│   ├── 03_consultas_alertas.sql
 │   ├── 03_consultas_usuarios.sql
-│   ├── 02_datos_prueba_historial.sql
-│   ├── 03_consultas_historial.sql
-│   └── 04_seguridad.sql
-│
+│   ├── 03_Consultas_Historial.sql
+│   ├── 04_Consultas_Resumen.sql
+│   ├── safeschool_alert.backup
+│   ├── modelo/
+│   │   └── 01_Modelo_Fisico.png
+│   └── Evidencias/
+│       └── Capturas de tablas, registros y consultas
 ├── documentación/
-│   └── 01_Modelo_Fisico.pdf
-│
-├── integracion/
-│   ├── correspondencia_app_SafeSchool.pdf
-│   └── diagrama_integracion.sql
-│
-├── modelo/
-│   └── diagrama_modelo_fisico.png
-│
+│   ├── 01_Modelo_Fisico.pdf
+│   └── E1_AvanceTecnico_SafeSchool_Alert_2026.pdf
 ├── evidencias/
-│   ├── VELASCO_ROLANDO_SEMANA2.pdf
-│   ├── MERCADO_ULISES_SEMANA2.pdf
-│   ├── MELENDEZ_MARIO_SEMANA2.pdf
-│   ├── MERCADO_ULISES_SEMANA3.pdf
-│   ├── VELASCO_ROLANDO_SEMANA3.pdf
-│   └── MELENDEZ_MARIO_SEMANA3.pdf
-│
+│   ├── Evidencias SafeSchool Alert DB.pdf
+│   ├── VELASCO_ROLANDO_EVIDENCIAS_SEMANA2.pdf
+│   ├── VELASCO_ROLANDO_EVIDENCIAS_SEMANA3.pdf
+│   └── recursos/
+│       ├── banner_BD.png
+│       └── banner_proyecto.png
+├── integracion/
+│   ├── correspondencia_app_bd_SafeSchool.pdf
+│   └── diagrama_de_integración .png
+├── presentación/
+│   └── Presentación.txt
+├── pruebas/
+│   └── evidencias/
+│       └── Capturas de las pruebas de la aplicación
+├── Prueba.txt
 └── README.md
+
 
 ```
 
