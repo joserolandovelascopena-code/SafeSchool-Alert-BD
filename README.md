@@ -351,8 +351,6 @@ Responsable de la información almacenada de usuarios y consultas de datos de ac
 
 ### Funcionalidades en desarrollo
 
-- **Ubicación de la institución educativa:** Se encuentra en desarrollo la función destinada a mostrar cómo llegar a la institución y facilitar la identificación de lugares cercanos relacionados con la atención de emergencias.
-
 - **Cambio de foto de perfil:** Se encuentra en desarrollo la opción para cambiar la imagen de perfil del usuario.
 
 ---
