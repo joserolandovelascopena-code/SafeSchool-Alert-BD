@@ -8,7 +8,7 @@ Este repositorio contiene la estructura de la base de datos para el sistema **Sa
 
 ---
 
-# Tabla de contenidoli
+# Tabla de contenido
 
 - [SafeSchool Alert: Base de Datos](#safeschool-alert-base-de-datos)
 - [Descripción del proyecto](#descripción-del-proyecto)
