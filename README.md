@@ -170,6 +170,7 @@ SafeSchool Alert utiliza información almacenada en PostgreSQL para realizar dif
 | Consultar y actualizar el estado de una alerta | `alertas`          | SELECT / UPDATE | Identificador y estado de la alerta                                       |
 | Consultar historial de alertas                 | `historial`        | SELECT          | Emergencia, usuario, ubicación, descripción y fecha y hora                |
 
+## Consultas principales del sistema
 ### Consulta de alertas con INNER JOIN Y LEFT JOIN
 
 Esta consulta obtiene información completa de las alertas relacionando las tablas `alertas`, `usuarios`, `tipos_emergencia` y `ubicaciones`.
