@@ -114,7 +114,7 @@ Desarrollar un sistema inteligente de alertas escolares utilizando MIT App Inven
 | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **José Rolando Velasco Peña**       | En cargado de la revisión, corrección y desarrollo de nuevas funcionalidades y realización de las pruebas de la aplicación móvil en MIT App Inventor.                                          |
 | **Luis Mario Meléndez Escobar**     | Actualización, organización y documentación de la base de datos PostgreSQL que se utilizara para el proyecto en versiones futuras del proyecto al momento de conectarse mediante una API REST. |
-| **Ulises de Jesús Mercado Alberto** | Elaboración de la documentación técnica y preparación del stand del proyecto.                                                                                                                  |
+| **Ulises de Jesús Mercado Alberto** | Elaboración de la documentación técnica del proyecto, y preparación de los recursos visuales y de exposición del stand para la precentación del proyecto.                                                                                                                  |
 
 ---
 
