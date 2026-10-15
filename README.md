@@ -15,18 +15,17 @@ Este repositorio contiene la estructura de la base de datos para el sistema **Sa
 - [Problema](#Problema)
 - [Solución](#solución)
 - [Objetivos](#objetivos)
+- [Tecnologías utilizadas](#tecnologías-utilizadas)
+- [Integrantes y responsabilidades](#integrantes-y-responsabilidades)
 - [Base de datos](#base-de-datos)
   - [Nombre de la base de datos](#nombre-de-la-base-de-datos)
   - [Sistema gestor](#sistema-gestor)
 - [Estructura de la base de datos](#estructura-de-la-base-de-datos)
 - [Correspondencia](#funciones-de-la-aplicación-y-correspondencia-appbd)
 - [Consultas principales](#consultas-principales)
-- [Operaciones SQL relacionadas con la aplicación](#operaciones-sql-relacionadas-con-la-aplicación)
 - [Seguridad](#seguridad)
-- [Integrantes y responsabilidades](#integrantes-y-responsabilidades)
 - [Funcionalidades](#funcionalidades)
 - [Relaciones entre las tablas](#relaciones-entre-las-tablas)
-- [Tecnologías utilizadas](#tecnologías-utilizadas)
 - [Evidencias](#evidencias)
 - [Enlace de documento final](#enlace-de-documento-final)
 - [Estado del proyecto](#estado-del-proyecto)
@@ -47,13 +46,9 @@ El sistema integra una aplicación móvil desarrollada con **MIT App Inventor** 
 
 La base de datos desarrollada en **PostgreSQL** permite almacenar la información necesaria para el funcionamiento del sistema, incluyendo instituciones, usuarios, ubicaciones, tipos de emergencia, alertas e historial de emergencias detectadas.
 
----
-
 ## Problema
 
 Los problemas dentro de los salones escolares son algo que ocurre todo el tiempo, ya sean emergencias médicas, peleas entre estudiantes o decomiso de artículos. Actualmente, en el instituto, cuando ocurren problemas, solamente se notifica por mensaje o llamada y, en el peor de los casos, los docentes tienen que ir directamente a dirección, lo que, en caso de algo muy urgente, puede poner en riesgo la salud del estudiante o docente si se trata de una emergencia médica.
-
----
 
 ## Solución
 
@@ -72,6 +67,57 @@ Desarrollar un sistema inteligente de alertas escolares utilizando MIT App Inven
 - Diseñar un sistema que mejore la seguridad dentro de la institución educativa mediante el uso de tecnologías, para un entorno escolar más seguro para estudiantes, docentes y personal administrativo.
 
 - Mejorar el tiempo de respuesta del personal docente y administrativo ante situaciones de emergencia, mediante el envío de notificaciones que permita actuar de manera más rápida.
+
+## Tecnologías utilizadas
+
+| Tecnología         | Uso                                                                                                                                                            |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| PostgreSQL         | Sistema gestor de bases de datos utilizado para almacenar y administrar la información del proyecto.                                                           |
+| pgAdmin 4          | Herramienta de administración de PostgreSQL que permite gestionar la base de datos y ejecutar consultas y sentencias SQL.                                      |
+| Visual Studio Code | Editor de código utilizado para editar y organizar los archivos y la estructura del proyecto.                                                                  |
+| Git                | Sistema de control de versiones que permite mantener un historial de los cambios realizados en el proyecto y facilitar el trabajo colaborativo mediante ramas. |
+| GitHub             | Plataforma utilizada para alojar el repositorio del proyecto en la nube y facilitar la colaboración entre los integrantes del equipo.                          |
+| Arduino Uno        | Microcontrolador principal en cargado de la activación de emergencias médiante pulsadores y automatica con el sensor MQ-2                                      |
+| C++                | Desarrollo de la progrmación para el circuito electronico del proyecto                                                                                         |
+| Tinkercad          | Simulación del circuito electrónico del proyecto SafeSchool Alert                                                                                              |
+
+---
+
+## Funcionalidades
+
+- **Registro de usuarios:** Permite registrar nuevos usuarios mediante su nombre, correo electrónico y contraseña.
+
+- **Inicio de sesión:** Permite a los usuarios registrados acceder a la aplicación utilizando sus credenciales.
+
+- **Cierre de sesión:** Permite cerrar la sesión de la cuenta actual.
+
+- **Comunicación con Arduino Uno mediante Bluetooth:** Establece la comunicación entre la aplicación móvil y el Arduino Uno mediante el módulo Bluetooth HC-05, permitiendo intercambiar información relacionada con las emergencias.
+
+- **Activación manual de emergencias:** Permite activar emergencias desde la aplicación, seleccionando el tipo de emergencia y la ubicación correspondiente.
+
+- **Gestión de estados de las emergencias:** Permite actualizar el estado de una emergencia a _en proceso_, _atendida_ o _falsa alarma_, facilitando su seguimiento.
+
+- **Gestión de emergencias por reconocimiento de voz:** Permite utilizar instrucciones de voz para realizar acciones relacionadas con la gestión de emergencias, como atenderlas o cambiar su estado.
+
+- **Ubicación de las emergencias:** Permite identificar y visualizar en un mapa de la institución educativa el lugar donde se ha generado una emergencia, junto con información sobre el tipo de incidente.
+
+- **Historial de emergencias:** Permite consultar las emergencias registradas, incluyendo información como el tipo de emergencia, la fecha y el usuario encargado de atenderla.
+
+- **Gestión del perfil de usuario:** Incluye una sección destinada a consultar y gestionar la información de la cuenta del usuario. Algunas funciones de esta sección continúan en desarrollo.
+
+- **Creación y publicación de avisos y comunicados:** Permite a los usuarios autorizados crear avisos para comunicar información importante a la comunidad educativa.
+
+- **Configuración de la aplicación:** Permite configurar opciones relacionadas con Bluetooth, alarmas, vibraciones y mensajes SMS.
+
+- **Cambio de foto de perfil:** Se encuentra en desarrollo la opción para cambiar la imagen de perfil del usuario.
+
+## Integrantes y responsabilidades
+
+| Integrante                          | Responsabilidad                                                                                                                                                                                |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **José Rolando Velasco Peña**       | En cargado de la revisión, corrección y desarrollo de nuevas funcionalidades y realización de las pruebas de la aplicación móvil en MIT App Inventor.                                          |
+| **Luis Mario Meléndez Escobar**     | Actualización, organización y documentación de la base de datos PostgreSQL que se utilizara para el proyecto en versiones futuras del proyecto al momento de conectarse mediante una API REST. |
+| **Ulises de Jesús Mercado Alberto** | Elaboración de la documentación técnica y preparación del stand del proyecto.                                                                                                                  |
 
 ---
 
@@ -124,12 +170,6 @@ SafeSchool Alert utiliza información almacenada en PostgreSQL para realizar dif
 | Consultar ubicaciones                          | `ubicaciones`      | SELECT          | Ubicación donde puede generarse una emergencia                            |
 | Consultar y actualizar el estado de una alerta | `alertas`          | SELECT / UPDATE | Identificador y estado de la alerta                                       |
 | Consultar historial de alertas                 | `historial`        | SELECT          | Emergencia, usuario, ubicación, descripción y fecha y hora                |
-
-Estas operaciones representan la relación que tendría la aplicación con la base de datos durante una futura integración. La aplicación no se conectará directamente con PostgreSQL, sino que las solicitudes serán procesadas mediante una API o servicio web.
-
-## Consultas principales
-
-Acontinuación se presntan las consultas principales, para obtener información específica de las alertas, usuarios e historial de emergencias almacenados en PostgreSQL, que la aplicación móvil necesitara obtner para gstionar cada una de las emergencias de la institución educativa.
 
 ### Consulta de alertas con INNER JOIN Y LEFT JOIN
 
@@ -234,48 +274,6 @@ INNER JOIN public.ubicaciones
 
 ---
 
-## Operaciones SQL relacionadas con la aplicación
-
-Las funciones de SafeSchool Alert se relacionan con las operaciones SQL CRUD que la aplicación necesite utilizar para gestioanar cada emergencia.
-
-### SELECT
-
-Se utilizará cuando la aplicación necesite consultar información almacenada en PostgreSQL.
-
-Algunos ejemplos son:
-
-- Identificar un usuario.
-- Consultar tipos de emergencia.
-- Consultar ubicaciones.
-- Consultar alertas.
-- Consultar el historial de emergencias.
-
-### INSERT
-
-Se utilizará cuando la aplicación necesite registrar una nueva emergencia, usuario, institución, ubicación, tipo de emergencia, o un nuevo evento en historial en la base de datos.
-
-La información registrada puede incluir:
-
-- Usuario relacionado.
-- Tipo de emergencia.
-- Ubicación.
-- Descripción.
-- Fecha.
-- Hora.
-- Estado.
-
-### UPDATE
-
-Se utilizará cuando sea necesario modificar información de una alerta existente, principalmente su estado.
-
-Por ejemplo cuando una alerta cambia de un estado "ACTIVA" a "ATENDIDA" al momento de que un usuario atiende la emergencia o cuando pasa ha proceso de atención.
-
-### DELETE
-
-La eliminación de alertas, emergencias, usuarios, historial etc. Almacenados en la base de datos del sistema cuando sea necesario la eliminación de registros.
-
----
-
 ## Seguridad
 
 Para administrar el acceso a la base de datos se creó un usuario específico denominado `safeschool_user`, al cual se le asignaron permisos para conectarse a la base de datos del proyecto SafesSchool Alert, con permisos utilizar el esquema `public` y realizar operaciones SQL CRUD en las tablas del esquema `public`.
@@ -298,60 +296,6 @@ Usuario: safeschool_user
 Base de datos: safeschool_alert
 Esquema: public
 ```
-
----
-
-## Integrantes y responsabilidades
-
-| Integrante                      | Responsabilidad       |
-| ------------------------------- | --------------------- |
-| José Rolando Velasco Peña       | Alertas y emergencias |
-| Luis Mario Meléndez Escobar     | Historial de alertas  |
-| Ulises de Jesus Mercado Alberto | Usuarios              |
-
-### José Rolando Velasco Peña: Alertas y emergencias
-
-Responsable de la creación de las funciones que se relacionan con el registro, consulta y gestión de los datos almacnados en la tabla alertas del proyecto.
-
-### Luis Mario Meléndez Escobar: Historial
-
-Responsable de los registros almacenados en la tabla historial de emergencias, sus consultas y la información de cada uno de los eventos de las emergencias.
-
-### Ulises de Jesus Mercado Alberto: Usuarios
-
-Responsable de la información almacenada de usuarios y consultas de datos de acceso, personales y de contacto, y la creación de las funciones de consulta de los datos de usuarios registrados en el sistema.
-
----
-
-## Funcionalidades
-
-- **Registro de usuarios:** Permite registrar nuevos usuarios mediante su nombre, correo electrónico y contraseña.
-
-- **Inicio de sesión:** Permite a los usuarios registrados acceder a la aplicación utilizando sus credenciales.
-
-- **Cierre de sesión:** Permite cerrar la sesión de la cuenta actual.
-
-- **Comunicación con Arduino Uno mediante Bluetooth:** Establece la comunicación entre la aplicación móvil y el Arduino Uno mediante el módulo Bluetooth HC-05, permitiendo intercambiar información relacionada con las emergencias.
-
-- **Activación manual de emergencias:** Permite activar emergencias desde la aplicación, seleccionando el tipo de emergencia y la ubicación correspondiente.
-
-- **Gestión de estados de las emergencias:** Permite actualizar el estado de una emergencia a _en proceso_, _atendida_ o _falsa alarma_, facilitando su seguimiento.
-
-- **Gestión de emergencias por reconocimiento de voz:** Permite utilizar instrucciones de voz para realizar acciones relacionadas con la gestión de emergencias, como atenderlas o cambiar su estado.
-
-- **Ubicación de las emergencias:** Permite identificar y visualizar en un mapa de la institución educativa el lugar donde se ha generado una emergencia, junto con información sobre el tipo de incidente.
-
-- **Historial de emergencias:** Permite consultar las emergencias registradas, incluyendo información como el tipo de emergencia, la fecha y el usuario encargado de atenderla.
-
-- **Gestión del perfil de usuario:** Incluye una sección destinada a consultar y gestionar la información de la cuenta del usuario. Algunas funciones de esta sección continúan en desarrollo.
-
-- **Creación y publicación de avisos y comunicados:** Permite a los usuarios autorizados crear avisos para comunicar información importante a la comunidad educativa.
-
-- **Configuración de la aplicación:** Permite configurar opciones relacionadas con Bluetooth, alarmas, vibraciones y mensajes SMS.
-
-### Funcionalidades en desarrollo
-
-- **Cambio de foto de perfil:** Se encuentra en desarrollo la opción para cambiar la imagen de perfil del usuario.
 
 ---
 
@@ -433,20 +377,6 @@ La relación es de: 1 : N
 ```
 
 La tabla `historial` utiliza `id_alerta` como clave foránea.
-
----
-
-## Tecnologías utilizadas
-
-| Tecnología             | Uso                                                    |
-| ---------------------- | ------------------------------------------------------ |
-| **PostgreSQL**         | Sistema gestor de base de datos.                       |
-| **pgAdmin 4**          | Administración y ejecución de consultas SQL.           |
-| **Visual Studio Code** | Edición y organización de archivos del proyecto.       |
-| **Git**                | Control de versiones del proyecto.                     |
-| **GitHub**             | Almacenamiento del repositorio y trabajo colaborativo. |
-
-El proyecto general SafeSchool Alert también utiliza **MIT App Inventor, Arduino Uno, C++, Bluetooth HC-05, CloudDB y Tinkercad** como parte de la aplicación y del sistema electrónico.
 
 ---
 
