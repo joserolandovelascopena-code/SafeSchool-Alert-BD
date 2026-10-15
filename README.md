@@ -108,8 +108,6 @@ Desarrollar un sistema inteligente de alertas escolares utilizando MIT App Inven
 
 - **Configuración de la aplicación:** Permite configurar opciones relacionadas con Bluetooth, alarmas, vibraciones y mensajes SMS.
 
-- **Cambio de foto de perfil:** Se encuentra en desarrollo la opción para cambiar la imagen de perfil del usuario.
-
 ## Integrantes y responsabilidades
 
 | Integrante                          | Responsabilidad                                                                                                                                                                                |
