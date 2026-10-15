@@ -1,7 +1,6 @@
 ![Banner repo](./evidencias/recursos/banner_proyecto.png)
 
-# SafeSchool Alert: Base de Datos
-
+# SafeSchool Alert
 **Sistema inteligente de alertas y emergencias escolares**
 
 Este repositorio contiene la estructura de la base de datos para el sistema **SafeSchool Alert**, incluidas las instrucciones necesarias para las consultas de datos, operaciones de manipulación, uniones de tablas y consultas SQL avanzadas diseñadas para recuperar los datos más precisos que el sistema utlizará.
