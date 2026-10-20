@@ -395,7 +395,7 @@ En esta sección se proporcionan los archivos que muestran el trabajo realizado 
 
 En este apartado se proporciona el documento de avance del proyecto SafeSchool Alert, donde se presenta el trabajo realizado hasta el momento, incluyendo la estructura de la base de datos, la creación de las tablas, las relaciones entre ellas, las consultas SQL y las evidencias que muestran el desarrollo realizado por el equipo.
 
-- [Enlace al documento](./documentación/E1_AvanceTecnico_SafeSchool_Alert_2026.pdf)
+- [Enlace al documento](./documentación/PROYECTO_GRADUACION_2026_SafeSchool_Alert.pdf)
 
 ---
 
