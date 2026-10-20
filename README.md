@@ -1,7 +1,6 @@
 ![Banner repo](./evidencias/recursos/banner_proyecto.png)
 
-# SafeSchool Alert: Base de Datos
-
+# SafeSchool Alert
 **Sistema inteligente de alertas y emergencias escolares**
 
 Este repositorio contiene la estructura de la base de datos para el sistema **SafeSchool Alert**, incluidas las instrucciones necesarias para las consultas de datos, operaciones de manipulación, uniones de tablas y consultas SQL avanzadas diseñadas para recuperar los datos más precisos que el sistema utlizará.
@@ -109,15 +108,13 @@ Desarrollar un sistema inteligente de alertas escolares utilizando MIT App Inven
 
 - **Configuración de la aplicación:** Permite configurar opciones relacionadas con Bluetooth, alarmas, vibraciones y mensajes SMS.
 
-- **Cambio de foto de perfil:** Se encuentra en desarrollo la opción para cambiar la imagen de perfil del usuario.
-
 ## Integrantes y responsabilidades
 
 | Integrante                          | Responsabilidad                                                                                                                                                                                |
 | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **José Rolando Velasco Peña**       | En cargado de la revisión, corrección y desarrollo de nuevas funcionalidades y realización de las pruebas de la aplicación móvil en MIT App Inventor.                                          |
 | **Luis Mario Meléndez Escobar**     | Actualización, organización y documentación de la base de datos PostgreSQL que se utilizara para el proyecto en versiones futuras del proyecto al momento de conectarse mediante una API REST. |
-| **Ulises de Jesús Mercado Alberto** | Elaboración de la documentación técnica y preparación del stand del proyecto.                                                                                                                  |
+| **Ulises de Jesús Mercado Alberto** | Elaboración de la documentación técnica del proyecto, y preparación de los recursos visuales y de exposición del stand para la precentación del proyecto.                                                                                                                  |
 
 ---
 
@@ -171,6 +168,7 @@ SafeSchool Alert utiliza información almacenada en PostgreSQL para realizar dif
 | Consultar y actualizar el estado de una alerta | `alertas`          | SELECT / UPDATE | Identificador y estado de la alerta                                       |
 | Consultar historial de alertas                 | `historial`        | SELECT          | Emergencia, usuario, ubicación, descripción y fecha y hora                |
 
+## Consultas principales del sistema
 ### Consulta de alertas con INNER JOIN Y LEFT JOIN
 
 Esta consulta obtiene información completa de las alertas relacionando las tablas `alertas`, `usuarios`, `tipos_emergencia` y `ubicaciones`.
