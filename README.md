@@ -1,6 +1,7 @@
 ![Banner repo](./evidencias/recursos/banner_proyecto.png)
 
 # SafeSchool Alert
+
 **Sistema inteligente de alertas y emergencias escolares**
 
 Este repositorio contiene la estructura de la base de datos para el sistema **SafeSchool Alert**, incluidas las instrucciones necesarias para las consultas de datos, operaciones de manipulación, uniones de tablas y consultas SQL avanzadas diseñadas para recuperar los datos más precisos que el sistema utlizará.
@@ -44,6 +45,17 @@ Este repositorio contiene la estructura de la base de datos para el sistema **Sa
 El sistema integra una aplicación móvil desarrollada con **MIT App Inventor** y un sistema electrónico basado en **Arduino Uno**, permitiendo detectar, registrar y gestionar diferentes tipos de emergencias.
 
 La base de datos desarrollada en **PostgreSQL** permite almacenar la información necesaria para el funcionamiento del sistema, incluyendo instituciones, usuarios, ubicaciones, tipos de emergencia, alertas e historial de emergencias detectadas.
+
+## Documento de avance
+
+En este apartado se proporciona el documento de avance del proyecto SafeSchool Alert, donde se presenta el trabajo realizado hasta el momento, incluyendo la estructura de la base de datos, la creación de las tablas, las relaciones entre ellas, las consultas SQL y las evidencias que muestran el desarrollo realizado por el equipo.
+
+| Sección                 | Descripción                                       | Enlace                                                                           |
+| :---------------------- | :------------------------------------------------ | :------------------------------------------------------------------------------- |
+| **Documentación**       | Documento de avance del proyecto SafeSchool Alert | [Ver PDF](./documentación/PROYECTO_GRADUACION_2026_SafeSchool_Alert.pdf)         |
+| **Descargar apliación** | Documento de avance del proyecto SafeSchool Alert | [Abrir sitio web](./documentación/PROYECTO_GRADUACION_2026_SafeSchool_Alert.pdf) |
+
+---
 
 ## Problema
 
@@ -114,7 +126,7 @@ Desarrollar un sistema inteligente de alertas escolares utilizando MIT App Inven
 | ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **José Rolando Velasco Peña**       | En cargado de la revisión, corrección y desarrollo de nuevas funcionalidades y realización de las pruebas de la aplicación móvil en MIT App Inventor.                                          |
 | **Luis Mario Meléndez Escobar**     | Actualización, organización y documentación de la base de datos PostgreSQL que se utilizara para el proyecto en versiones futuras del proyecto al momento de conectarse mediante una API REST. |
-| **Ulises de Jesús Mercado Alberto** | Elaboración de la documentación técnica del proyecto, y preparación de los recursos visuales y de exposición del stand para la precentación del proyecto.                                                                                                                  |
+| **Ulises de Jesús Mercado Alberto** | Elaboración de la documentación técnica del proyecto, y preparación de los recursos visuales y de exposición del stand para la precentación del proyecto.                                      |
 
 ---
 
@@ -169,6 +181,7 @@ SafeSchool Alert utiliza información almacenada en PostgreSQL para realizar dif
 | Consultar historial de alertas                 | `historial`        | SELECT          | Emergencia, usuario, ubicación, descripción y fecha y hora                |
 
 ## Consultas principales del sistema
+
 ### Consulta de alertas con INNER JOIN Y LEFT JOIN
 
 Esta consulta obtiene información completa de las alertas relacionando las tablas `alertas`, `usuarios`, `tipos_emergencia` y `ubicaciones`.
@@ -382,18 +395,14 @@ La tabla `historial` utiliza `id_alerta` como clave foránea.
 
 En esta sección se proporcionan los archivos que muestran el trabajo realizado y los avances del proyecto SafeSchool Alert. Se incluyen las evidencias del desarrollo, como documentos, capturas y otros archivos relacionados con el proyecto, así como los scripts SQL utilizados para la creación y el manejo de la base de datos.
 
-- [Carpeta de evidencias de pruebas de la aplicación móvil](./pruebas/evidencias/)
-- [Carpeta de evidencias de la aplicación móvil](./app-inventor/evidencia/)
-- [Carpeta de evidencias base de datos](./database/Evidencias/)
-- [Carpeta de scripts de la base de datos](./database/)
+### Evidencias
 
----
-
-## Documento de avance
-
-En este apartado se proporciona el documento de avance del proyecto SafeSchool Alert, donde se presenta el trabajo realizado hasta el momento, incluyendo la estructura de la base de datos, la creación de las tablas, las relaciones entre ellas, las consultas SQL y las evidencias que muestran el desarrollo realizado por el equipo.
-
-- [Enlace al documento](./documentación/PROYECTO_GRADUACION_2026_SafeSchool_Alert.pdf)
+| Sección           | Descripción                                             | Enlace                                      |
+| :---------------- | :------------------------------------------------------ | :------------------------------------------ |
+| **Pruebas**       | Carpeta de evidencias de pruebas de la aplicación móvil | [Ver evidencias](./pruebas/evidencias/)     |
+| **App Móvil**     | Carpeta de evidencias de la aplicación móvil            | [Ver evidencias](./app-inventor/evidencia/) |
+| **Base de Datos** | Carpeta de evidencias de la base de datos               | [Ver evidencias](./database/Evidencias/)    |
+| **Base de Datos** | Carpeta de scripts de la base de datos                  | [Ver scripts](./database/)                  |
 
 ---
 
