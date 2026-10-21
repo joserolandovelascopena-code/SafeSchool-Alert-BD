@@ -53,7 +53,7 @@ En este apartado se proporciona el documento de avance del proyecto SafeSchool A
 | Sección                 | Descripción                                       | Enlace                                                                           |
 | :---------------------- | :------------------------------------------------ | :------------------------------------------------------------------------------- |
 | **Documentación**       | Documento de avance del proyecto SafeSchool Alert | [Ver PDF](./documentación/PROYECTO_GRADUACION_2026_SafeSchool_Alert.pdf)         |
-| **Descargar apliación** | Documento de avance del proyecto SafeSchool Alert | [Abrir sitio web](https://joserolandovelascopena-code.github.io/SafeSchool-Alert-BD/) |
+| **Descargar aplicación** | Página web oficial de distribución de SafeSchool Alert| [Abrir página web](https://joserolandovelascopena-code.github.io/SafeSchool-Alert-BD/) |
 
 ---
 
